@@ -1,0 +1,120 @@
+\documentclass[a4paper,12pt]{report}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\contentsname}{Indholdsfortegnelse}
+
+\usepackage{apacite}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{float}
+\restylefloat{table}
+
+\title{T6-4 Semesterprojektrapport\\ \large Syddansk Universitet, Teknisk Fakultet,\\ Softwareteknologi og Software Engineering}
+\author{
+	Abdirahman Mohamed, Abdullahi\\
+	\texttt{aabdi07@student.sdu.dk}
+	\and
+	Andersen, Mikkel Plagborg\\
+	\texttt{mikke20@student.sdu.dk}
+	\and
+	Irvold, Anton Valdemar Dahlin\\
+	\texttt{anirv20@student.sdu.dk}
+	\and
+	Bouzan, Jakub\\
+	\texttt{jabou19@student.sdu.dk}
+	\and
+	Tønnes, Frederik Primdahl\\
+	\texttt{frtoe20@student.sdu.dk}	 
+}
+
+\begin{document}
+
+\date{\today}
+\maketitle
+\tableofcontents
+
+\section{Introduktion}
+Projektet tager udgangspunkt i de 17. verdensmål opstillet og vedtaget af alle FNs medlemslande. Verdensmålene har til formål at skabe en kurs mod en bæredygtig udvikling. Produktudformningen skal ske som et spil baseret på World of Zool frameworket.\\ 
+
+I 2011 bestod energimixet af mere end 20\% vedvarende energi. FN’s 7. verdensmål arbejder for at skabe mere bæredygtig, pålidelig og moderne energi til et voksende energibehov.\\
+
+Specifikt arbejder projektet med verdensmål 7.2, som fokuserer på at den fremtidige energi skal være vedvarende: “\textit{7.2 Inden 2030 skal andelen af vedvarende energi i det globale energimix øges væsentligt.}”\cite{verdensmaalene}
+
+\section{Problemanalyse}
+\subsection{Igangsættende problem}
+Implementeringen af vedvarende energikilder går for langsomt.
+
+\subsection{Identifikation}
+Som identifikation af problemet, laves et problemtræ af det igangsættende problem.
+
+\begin{figure}[h]
+	\includegraphics[width=\linewidth]{images/problemtræ.jpg}
+	\caption{Problemtræ over det igangsættende problem (blå). Årsager nederst (gul) og 		konsekvenser øverst (rød)}
+	\label{fig:problemtræ}
+\end{figure}
+
+\subsection{Egentlige problem}
+Udvikling af et læringsspil, der har til formål at informere børn og teenagere i den vestlige verden, sådan så de i fremtiden træffer de klimavenlige beslutninger, vedrørende de tilgængelige energiforsyningsmuligheder.
+
+\subsection{Verifikation}
+Problemet er givet af FN. Det antages derfor, at FN er en pålidelig institution, som har verificeret problemet i dets fulde form.
+
+\section{Problemformulering}
+\subsection{Hovedspørgsmål}
+Hvordan kan man forbedre viden, om de handlemuligheder det enkelte menneske har for at påvirke udviklingen af verdensmål 7 om bæredygtig energi, gennem udvikling af et læringsspil?
+
+\subsection{Underspørgsmål}
+\begin{enumerate}
+	\item Hvad handler FN’s 7. verdensmål om?
+	\item Hvad er et læringsspil?
+	\item Hvilke bæredygtige energikilder lever op til FN’s verdensmål?
+	\item Hvordan udvikles et læringsspil, der informerer målgruppen om løsningsmulighederne?
+\end{enumerate}
+
+\subsection{Afgrænsning}
+\begin{enumerate}
+	\item “Følgevirkninger” er løst defineret. Projektet handler som udgangspunkt kun om de klimamæssige konsekvenser, og ikke de miljømæssige.
+	\item Projektet er baseret på World of zuul-frameworket. Læringsspillet er derfor et computerspil udviklet i Java.
+	\item Spillet gamificeres og dermed vil data ikke nødvendigvis følge virkeligheden fuldstændig.
+	\item Projektet henvender sig til børn og teenagere, og har derfor til formål at påvirke klimaet på sigt.
+	\item Projektet er baseret på de nuværende og mest udbredte energikilder.
+\end{enumerate}
+
+\section{Metode}
+\subsection{Analyse-/designfasen}
+I analysefasen laves der en program- og kravspecifikation, på baggrund af den indsamlede viden om problemdomænet og relevant faglig litteratur. 
+I designfasen benyttes den objektorienterede metodologi. Dette består bl.a. af:
+\begin{itemize}
+	\item Verb/noun-metoden
+	\item CRC-kort
+	\item UML-diagrammer
+\end{itemize}
+
+\subsection{Implementeringsfasen}
+I implementeringsfasen benyttes programmeringsparadigmet objektorienteret programmering og Java. 
+
+\subsection{Testfasen}
+I testfasen laves bl.a. en acceptancetest, der har til formål at vurdere om programmet virker efter hensigten.
+
+\section{Tidsplan}
+\begin{table}[H]
+\begin{tabular}{| l | l | p{7cm} |}
+\hline
+\textbf{Uge} & \textbf{Navn}                 & \textbf{Beskrivelse}                               \\ \hline
+43           & Start på implementeringsfasen & Vejledning i klasserne. Start på 1. iteration      \\ \hline
+- & Det faglige vidensgrundlag & Arbejde med projektdomænet. Indsamling af relevant faglig litteratur. \\ \hline
+- & Design af løsning          & Design af løsningen ved brug af objektorienteret programudvikling     \\ \hline
+44           & Dataindsamling                & Indsamling af relevant data til projektet.         \\ \hline
+-            & Design af løsning             & -                                                  \\ \hline
+-            & Implementering af løsning     & Løsningen udvikles i Java på baggrund af designet. \\ \hline
+45           & Implementering af løsning     & -                                                  \\ \hline
+46           & Implementering af løsning     & -                                                  \\ \hline
+47           & Implementering af løsning     & -                                                  \\ \hline
+48           & Test af løsning               & Løsningen testes ift. de opstillede krav.          \\ \hline
+49           & \textit{Buffer}               & Ekstra tid til mangler.                            \\ \hline
+\end{tabular}
+\end{table}
+
+\bibliographystyle{apacite}
+\bibliography{references}
+\end{document}

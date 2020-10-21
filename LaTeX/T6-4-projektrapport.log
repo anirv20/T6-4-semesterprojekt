@@ -1,0 +1,292 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.16)  17 OCT 2020 14:05
+entering extended mode
+**./T6-4-projektrapport.tex
+(T6-4-projektrapport.tex
+LaTeX2e <2020-10-01> patch level 1
+L3 programming layer <2020-10-05> xparse <2020-03-03>
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
+
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count175
+\c@chapter=\count176
+\c@section=\count177
+\c@subsection=\count178
+\c@subsubsection=\count179
+\c@paragraph=\count180
+\c@subparagraph=\count181
+\c@figure=\count182
+\c@table=\count183
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+
+! LaTeX Error: Command \bibsection undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \renewcommand{\bibsection}
+                              {Whatever floats your boat}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/apacite\apacite
+.sty
+Package: apacite 2013/07/21 v6.03 APA citation
+\c@BibCnt=\count184
+\bibleftmargin=\skip49
+\bibindent=\skip50
+\bibparsep=\skip51
+\bibitemsep=\skip52
+\biblabelsep=\skip53
+)
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphi
+cx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval
+.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphi
+cs.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.s
+ty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\gr
+aphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pd
+ftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
+)
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\bookta
+bs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen141
+\lightrulewidth=\dimen142
+\cmidrulewidth=\dimen143
+\belowrulesep=\dimen144
+\belowbottomsep=\dimen145
+\aboverulesep=\dimen146
+\abovetopsep=\dimen147
+\cmidrulesep=\dimen148
+\cmidrulekern=\dimen149
+\defaultaddspace=\dimen150
+\@cmidla=\count185
+\@cmidlb=\count186
+\@aboverulesep=\dimen151
+\@belowrulesep=\dimen152
+\@thisruleclass=\count187
+\@lastruleclass=\count188
+\@thisrulewidth=\dimen153
+)
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.s
+ty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\co
+lor.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colort
+bl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen154
+\ar@mcellbox=\box47
+\extrarowheight=\dimen155
+\NC@list=\toks16
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box48
+)
+\everycr=\toks17
+\minrowclearance=\skip56
+)
+\rownum=\count189
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count190
+\float@exts=\toks18
+\float@box=\box49
+\@float@everytoks=\toks19
+\@floatcapt=\box50
+)
+\@float@every@table=\toks20
+
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3bac
+kend-pdftex.def
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count191
+\l__pdf_internal_box=\box51
+) (T6-4-projektrapport.aux)
+\openout1 = `T6-4-projektrapport.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+\c@maskedRefs=\count192
+
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/apacite\english
+.apc
+File: english.apc 2013/07/21 v6.03 apacite language file
+LaTeX Info: Redefining \BPBI on input line 129.
+LaTeX Info: Redefining \BHBI on input line 130.
+)
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\sup
+p-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count193
+\scratchdimen=\dimen156
+\scratchbox=\box52
+\nofMPsegments=\count194
+\nofMParguments=\count195
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count196
+\MPscratchDim=\dimen157
+\MPnumerator=\count197
+\makeMPintoPDFobject=\count198
+\everyMPtoPDFconversion=\toks22
+)
+(C:\Users\anton_mc03yx6\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\ep
+stopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 34.
+ [1
+
+{C:/Users/anton_mc03yx6/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (T6-4-p
+rojektrapport.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 1.
+)
+\tf@toc=\write3
+\openout3 = `T6-4-projektrapport.toc'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+[1
+
+]
+<images/problemtræ.jpg, id=13, 494.84875pt x 486.81876pt>
+File: images/problemtræ.jpg Graphic file (type jpg)
+<use images/problemtræ.jpg>
+Package pdftex.def Info: images/problemtræ.jpg  used on input line 52.
+(pdftex.def)             Requested size: 390.0pt x 383.66893pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (74.37712pt too wide) in paragraph at lines 72--73
+[]\OT1/cmr/m/n/12 Hvordan ud-vikles et lringsspil, der in-formerer malgruppen
+ om lsningsmulighederne? 
+ []
+
+
+Overfull \hbox (6.96765pt too wide) in paragraph at lines 77--78
+[]\OT1/cmr/m/n/12 \Flgevirkninger" er lst de-fineret. Pro-jek-tet han-dler so
+m udgangspunkt
+ []
+
+[2]
+Overfull \hbox (0.93909pt too wide) in paragraph at lines 95--96
+\OT1/cmr/m/n/12 I im-ple-menter-ings-fasen benyttes pro-gram-mer-ingsparadig-me
+t ob-jek-to-ri-en-teret
+ []
+
+
+Overfull \hbox (26.19681pt too wide) in paragraph at lines 102--117
+[][] 
+ []
+
+[3] (T6-4-projektrapport.bbl [4] [5 <./images/problemtræ.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 11--20
+[]\OT1/cmr/m/it/12 Verdensmalene.  \OT1/cmr/m/n/12 (2020, Sep).  FN.  Re-triev
+ed from
+ []
+
+) [6
+
+] (T6-4-projektrapport.aux) ) 
+Here is how much of TeX's memory you used:
+ 2387 strings out of 480236
+ 34219 string characters out of 2876757
+ 317411 words of memory out of 3000000
+ 18942 multiletter control sequences out of 15000+200000
+ 541884 words of font info for 52 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 60i,12n,66p,294b,244s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\anton_mc03yx6\AppData\Local\MiKTeX\font
+s/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/anton_mc03yx6/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/anton_mc0
+3yx6/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
+/Users/anton_mc03yx6/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr17.pfb><C:/Users/anton_mc03yx6/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmti12.pfb><C:/Users/anton_mc03yx6/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on T6-4-projektrapport.pdf (7 pages, 154395 bytes).
+PDF statistics:
+ 54 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+
