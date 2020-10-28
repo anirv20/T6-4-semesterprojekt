@@ -15,28 +15,28 @@ public class Game
 
     private void createRooms()
     {
-        Room outside, theatre, pub, lab, office;
+        Room cityHall, outside, nuclearReactor, coalPowerPlant, windTurbine;
       
-        outside = new Room("outside the main entrance of the university");
-        theatre = new Room("in a lecture theatre");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        outside = new Room("outside the main entrance of the City Hall");
+        cityHall = new Room("in the City Hall");
+        nuclearReactor = new Room("at the nuclear power plant");
+        coalPowerPlant = new Room("at the coal power plant");
+        windTurbine = new Room("at the wind turbines");
         
-        outside.setExit("east", theatre);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
+        cityHall.setExit("south", outside);
 
-        theatre.setExit("west", outside);
+        outside.setExit("west", nuclearReactor);
+        outside.setExit("east", coalPowerPlant);
+        outside.setExit("south", windTurbine);
+        outside.setExit("north", cityHall);
 
-        pub.setExit("east", outside);
+        coalPowerPlant.setExit("west", outside);
 
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
+        nuclearReactor.setExit("east", outside);
 
-        office.setExit("west", lab);
+        windTurbine.setExit("north", outside);
 
-        currentRoom = outside;
+        currentRoom = cityHall;
     }
 
     public void play() 
@@ -55,7 +55,7 @@ public class Game
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
+        System.out.println("Welcome to World of Zuul!");
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
