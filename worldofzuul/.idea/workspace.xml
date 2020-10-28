@@ -1,22 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="40996821-cfb4-4439-936e-c5174dfbd027" name="Default Changelist" comment="" />
+    <list default="true" id="40996821-cfb4-4439-936e-c5174dfbd027" name="Default Changelist" comment="Tried to delete &quot;Out&quot;">
+      <change afterPath="$PROJECT_DIR$/worldofzuul/Economy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/PowerPlant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/WindTurbine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Game.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1jE8SfsoGytRkjHiAjnRgCbQW1M" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Objektorienteret Programmering, (E20)/13 - Tællende aktivitet 2/farver" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -63,36 +106,72 @@
       <workItem from="1603711968640" duration="4850000" />
       <workItem from="1603798940122" duration="2384000" />
       <workItem from="1603878801835" duration="317000" />
+      <workItem from="1603890844676" duration="2939000" />
     </task>
+    <task id="LOCAL-00001" summary="Tried to delete &quot;Out&quot;">
+      <created>1603891056594</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603891056594</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Tried to delete &quot;Out&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tried to delete &quot;Out&quot;" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser" timestamp="1603892903489">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1603892903489" />
     <state x="531" y="235" key="FileChooserDialogImpl" timestamp="1603879114588">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="531" y="235" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1603879114588" />
-    <state width="1458" height="256" key="GridCell.Tab.0.bottom" timestamp="1603718377296">
+    <state width="1458" height="256" key="GridCell.Tab.0.bottom" timestamp="1603891990970">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1603718377296" />
-    <state width="1458" height="256" key="GridCell.Tab.0.center" timestamp="1603718377296">
+    <state width="1458" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1603891990970" />
+    <state width="1458" height="256" key="GridCell.Tab.0.center" timestamp="1603891990969">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1603718377296" />
-    <state width="1458" height="256" key="GridCell.Tab.0.left" timestamp="1603718377296">
+    <state width="1458" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1603891990969" />
+    <state width="1458" height="256" key="GridCell.Tab.0.left" timestamp="1603891990969">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1603718377296" />
-    <state width="1458" height="256" key="GridCell.Tab.0.right" timestamp="1603718377296">
+    <state width="1458" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1603891990969" />
+    <state width="1458" height="256" key="GridCell.Tab.0.right" timestamp="1603891990969">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1603718377296" />
+    <state width="1458" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1603891990969" />
+    <state x="343" y="213" key="Vcs.Push.Dialog.v2" timestamp="1603891111552">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="343" y="213" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1603891111552" />
     <state x="175" y="164" key="new project wizard" timestamp="1603879117667">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="175" y="164" key="new project wizard/0.0.1500.960@0.0.1500.960" timestamp="1603879117667" />
+    <state x="413" y="206" width="672" height="678" key="search.everywhere.popup" timestamp="1603893085260">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="413" y="206" width="672" height="678" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1603893085260" />
   </component>
 </project>
