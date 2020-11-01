@@ -1,29 +1,29 @@
 package worldofzuul;
 
 public class Pollution {
-    private double LIMIT;
-    private double totalpollution;
+    private double limit;
+    private double totalPollution;
     private double turnpullotion;
 
     public Pollution(double LIMIT, double totalpollution, double turnpullotion) {
-        this.LIMIT = LIMIT;
-        this.totalpollution = totalpollution;
+        this.limit = LIMIT;
+        this.totalPollution = totalpollution;
         this.turnpullotion = turnpullotion;
     }
 
-    public double getLIMIT() {
-        return LIMIT;
+    public double getLimit() {
+        return limit;
     }
 
-    public double getTotalpollution() {
-        return totalpollution;
+    public double getTotalPollution() {
+        return totalPollution;
     }
 
     public double getTurnpullotion() {
         return turnpullotion;
     }
 
-    public void setTotalpollution(double totalpollution) {
-        this.totalpollution = totalpollution;
+    public void setTotalPollution(double totalPollution) {
+        this.totalPollution = totalPollution;
     }
 }
