@@ -1,9 +1,13 @@
 package worldofzuul;
 
-public class WindTurbine extends PowerPlant {
+public class WindFarm extends PowerPlant {
+    private static long price = 124000;
 
-    public WindTurbine() {
-        super(100000, 10, 50, "This is a wind turbine...");
+    public WindFarm() {
+        super(10, 50, "This is a wind turbine farm consisting of 10 wind turbines.");
+    }
+    public static long getPrice() {
+        return price;
     }
 
     @Override

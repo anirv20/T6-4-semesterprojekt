@@ -1,15 +1,13 @@
 package worldofzuul;
 
 public class Pollution {
-    public static final double LIMIT = 500.0;
+    public final double LIMIT = 500.0;
     private double totalPollution;
     private double turnPollution;
-    
-    
-    public Pollution(double LIMIT, double totalPollution, double turnPollution) {
-        this.Limit = LIMIT;
+
+    public Pollution(double totalPollution, double turnPollution) {
         this.totalPollution = totalPollution;
-        this.turnpullotion = turnPollution;
+        this.turnPollution = turnPollution;
     }
     
     public double getLimit() {
@@ -26,6 +24,10 @@ public class Pollution {
 
     public double getTurnPollution() {
         return turnPollution;
+    }
+
+    public void setTurnPollution(double turnPollution) {
+        this.turnPollution = turnPollution;
     }
 
 }

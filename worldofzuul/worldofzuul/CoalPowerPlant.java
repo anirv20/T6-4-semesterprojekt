@@ -1,9 +1,14 @@
 package worldofzuul;
 
 public class CoalPowerPlant extends PowerPlant {
+    private static long price = 450000;
 
     public CoalPowerPlant() {
-        super(100000, 10, 50, "This is a coal power plant...");
+        super(10, 50, "This is a coal power plant...");
+    }
+
+    public static long getPrice() {
+        return price;
     }
 
     @Override

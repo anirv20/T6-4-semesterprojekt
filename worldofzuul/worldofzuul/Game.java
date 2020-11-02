@@ -1,40 +1,45 @@
 package worldofzuul;
 
-public class Game 
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Game
 {
     private Parser parser;
     private Room currentRoom;
-        
+    private Economy economy;
+    private List<PowerPlant> powerPlants = new ArrayList<>();
+    private Room cityHall, outside, nuclearReactor, coalPowerPlant, windFarm;
 
     public Game() 
     {
         createRooms();
         parser = new Parser();
+        economy = new Economy(1000000);
     }
 
 
     private void createRooms()
     {
-        Room cityHall, outside, nuclearReactor, coalPowerPlant, windTurbine;
-      
         outside = new Room("outside the main entrance of the City Hall");
         cityHall = new Room("in the City Hall");
         nuclearReactor = new Room("at the nuclear power plant");
         coalPowerPlant = new Room("at the coal power plant");
-        windTurbine = new Room("at the wind turbines");
+        windFarm = new Room("at the wind turbines");
         
         cityHall.setExit("south", outside);
 
         outside.setExit("west", nuclearReactor);
         outside.setExit("east", coalPowerPlant);
-        outside.setExit("south", windTurbine);
+        outside.setExit("south", windFarm);
         outside.setExit("north", cityHall);
 
         coalPowerPlant.setExit("west", outside);
 
         nuclearReactor.setExit("east", outside);
 
-        windTurbine.setExit("north", outside);
+        windFarm.setExit("north", outside);
 
         currentRoom = cityHall;
     }
@@ -82,6 +87,12 @@ public class Game
         else if (commandWord == CommandWord.QUIT) {
             wantToQuit = quit(command);
         }
+        else if (commandWord == CommandWord.BUY) {
+            buyPowerPlant();
+        }
+        else if (commandWord == CommandWord.SHOW) {
+            show(command);
+        }
         return wantToQuit;
     }
 
@@ -111,6 +122,46 @@ public class Game
         else {
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
+        }
+    }
+
+    private void buyPowerPlant() {
+        if (currentRoom.equals(windFarm)) {
+            if (economy.getBalance() >= WindFarm.getPrice()) {
+                powerPlants.add(new WindFarm());
+                economy.removeMoney(WindFarm.getPrice());
+            } else {
+                System.out.println("Not enough money! A wind farm costs " + WindFarm.getPrice());
+            }
+        } else if (currentRoom.equals(nuclearReactor)) {
+            if (economy.getBalance() >= NuclearReactor.getPrice()) {
+                powerPlants.add(new NuclearReactor());
+                economy.removeMoney(NuclearReactor.getPrice());
+            } else {
+                System.out.println("Not enough money! A nuclear reactor costs " + NuclearReactor.getPrice());
+            }
+        } else if (currentRoom.equals(coalPowerPlant)) {
+            if (economy.getBalance() >= CoalPowerPlant.getPrice()) {
+                powerPlants.add(new CoalPowerPlant());
+                economy.removeMoney(CoalPowerPlant.getPrice());
+            } else {
+                System.out.println("Not enough money! A coal power plant costs " + CoalPowerPlant.getPrice());
+            }
+        } else {
+            System.out.println("You are not in the right location to buy a power plant");
+        }
+    }
+    public void show(Command command) {
+        if(!command.hasSecondWord()) {
+            System.out.println("Show what?");
+            return;
+        }
+        if (command.getSecondWord().equals("plants")) {
+            System.out.println(powerPlants.toString());
+        } else if (command.getSecondWord().equals("balance")) {
+            System.out.println(economy.getBalance());
+        } else {
+            System.out.println("I don't understand");
         }
     }
 

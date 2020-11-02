@@ -1,9 +1,13 @@
 package worldofzuul;
 
 public class NuclearReactor extends PowerPlant {
+    private static long price = 3100000;
 
     public NuclearReactor() {
-        super(100000, 10, 50, "This is a nuclear reactor...");
+        super(10, 50, "This is a nuclear reactor...");
+    }
+    public static long getPrice() {
+        return price;
     }
 
     @Override

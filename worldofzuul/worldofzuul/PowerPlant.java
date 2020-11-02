@@ -1,25 +1,24 @@
 package worldofzuul;
 
 public abstract class PowerPlant {
-    private double price, pollution, energyProduction;
+    private double pollution, energyProduction;
     private int level = 1;
     public static final int MAXLEVEL = 3;
     private String description;
 
-    public PowerPlant(double price, double pollution, double energyProduction, String description) {
-        this.price = price;
+    public PowerPlant(double pollution, double energyProduction, String description) {
         this.pollution = pollution;
         this.energyProduction = energyProduction;
         this.description = description;
     }
 
-    public double getPrice() {
+    /**public double getPrice() {
         return price;
     }
 
     public void setPrice(double price) {
         this.price = price;
-    }
+    }**/
 
     public double getPollution() {
         return pollution;
