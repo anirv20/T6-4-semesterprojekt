@@ -1,9 +1,9 @@
 package worldofzuul;
 
 public class Energy {
-    private static double demand;
-    private static double totalProduction;
-    private static double difference;
+    private double demand;
+    private double totalProduction;
+    private double difference;
 
     public double getDemand() {
         return demand;
