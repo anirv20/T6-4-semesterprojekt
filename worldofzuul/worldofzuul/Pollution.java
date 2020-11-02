@@ -6,10 +6,10 @@ public class Pollution {
     private double turnPollution;
     
     
-    public Pollution(double LIMIT, double totalpollution, double turnpullotion) {
-        this.limit = LIMIT;
-        this.totalPollution = totalpollution;
-        this.turnpullotion = turnpullotion;
+    public Pollution(double LIMIT, double totalPollution, double turnPollution) {
+        this.Limit = LIMIT;
+        this.totalPollution = totalPollution;
+        this.turnpullotion = turnPollution;
     }
     
     public double getLimit() {
