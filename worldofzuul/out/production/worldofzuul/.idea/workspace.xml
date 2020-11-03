@@ -22,17 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40996821-cfb4-4439-936e-c5174dfbd027" name="Default Changelist" comment="Tried to delete &quot;Out&quot;">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/CoalPowerPlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/CoalPowerPlant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/CommandWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/CommandWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Economy.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Economy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/NuclearReactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/NuclearReactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Pollution.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Pollution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/PowerPlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/PowerPlant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/WindTurbine.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/WindFarm.java" afterDir="false" />
+    <list default="true" id="40996821-cfb4-4439-936e-c5174dfbd027" name="Default Changelist" comment="buy PowerPlant method">
+      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/CommandWord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/CommandWord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/Economy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/Economy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/PowerPlant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/PowerPlant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/WindTurbine.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +93,7 @@
       <workItem from="1603798940122" duration="2384000" />
       <workItem from="1603878801835" duration="317000" />
       <workItem from="1603890844676" duration="2939000" />
-      <workItem from="1604316428924" duration="3861000" />
+      <workItem from="1604316428924" duration="6635000" />
     </task>
     <task id="LOCAL-00001" summary="Tried to delete &quot;Out&quot;">
       <created>1603891056594</created>
@@ -108,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603891056594</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="buy PowerPlant method">
+      <created>1604323018216</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604323018216</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +129,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Tried to delete &quot;Out&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tried to delete &quot;Out&quot;" />
+    <MESSAGE value="buy PowerPlant method" />
+    <option name="LAST_COMMIT_MESSAGE" value="buy PowerPlant method" />
   </component>
   <component name="WindowStateProjectService">
     <state x="569" y="168" key="#com.intellij.ide.util.MemberChooser" timestamp="1604150401714">
@@ -140,33 +142,33 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="531" y="235" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1603879114588" />
-    <state width="1458" height="256" key="GridCell.Tab.0.bottom" timestamp="1603891990970">
+    <state width="1458" height="195" key="GridCell.Tab.0.bottom" timestamp="1604323069272">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1603891990970" />
-    <state width="1458" height="256" key="GridCell.Tab.0.center" timestamp="1603891990969">
+    <state width="1458" height="195" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1604323069272" />
+    <state width="1458" height="195" key="GridCell.Tab.0.center" timestamp="1604323069272">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1603891990969" />
-    <state width="1458" height="256" key="GridCell.Tab.0.left" timestamp="1603891990969">
+    <state width="1458" height="195" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1604323069272" />
+    <state width="1458" height="195" key="GridCell.Tab.0.left" timestamp="1604323069271">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1603891990969" />
-    <state width="1458" height="256" key="GridCell.Tab.0.right" timestamp="1603891990969">
+    <state width="1458" height="195" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1604323069271" />
+    <state width="1458" height="195" key="GridCell.Tab.0.right" timestamp="1604323069272">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="256" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1603891990969" />
-    <state x="343" y="213" key="Vcs.Push.Dialog.v2" timestamp="1603891111552">
+    <state width="1458" height="195" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1604323069272" />
+    <state x="343" y="213" key="Vcs.Push.Dialog.v2" timestamp="1604323040696">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="343" y="213" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1603891111552" />
+    <state x="343" y="213" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1604323040696" />
     <state x="175" y="164" key="new project wizard" timestamp="1603879117667">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="175" y="164" key="new project wizard/0.0.1500.960@0.0.1500.960" timestamp="1603879117667" />
-    <state x="413" y="206" width="672" height="678" key="search.everywhere.popup" timestamp="1603893085260">
+    <state x="414" y="207" width="672" height="678" key="search.everywhere.popup" timestamp="1604322484895">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="413" y="206" width="672" height="678" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1603893085260" />
+    <state x="414" y="207" width="672" height="678" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1604322484895" />
   </component>
 </project>

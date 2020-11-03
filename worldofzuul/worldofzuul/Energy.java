@@ -5,6 +5,10 @@ public class Energy {
     private double totalProduction;
     private double difference;
 
+    public Energy() {
+        this.demand = 600;
+    }
+
     public double getDemand() {
         return demand;
     }
@@ -28,8 +32,8 @@ public class Energy {
     public void setDifference(double difference) {
         this.difference = difference;
     }
-    public double checkDifference() {
-        this.difference = getDemand() - getTotalProduction();
-        return difference;
+
+    public void checkDifference() {
+        this.difference = getTotalProduction() - getDemand();
     }
 }

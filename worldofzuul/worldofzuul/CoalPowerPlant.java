@@ -4,7 +4,9 @@ public class CoalPowerPlant extends PowerPlant {
     private static long price = 450000;
 
     public CoalPowerPlant() {
-        super(10, 50, "This is a coal power plant...");
+        super(492000, 600);
+        setDescription("This is a coal power plant. A coal power plant costs " + getPrice() + " coins " +
+                "and produces " + getEnergyProduction() + " MW. The pollution is " + getPollution() + " kgCO2e/turn");
     }
 
     public static long getPrice() {
@@ -18,5 +20,9 @@ public class CoalPowerPlant extends PowerPlant {
             setPollution(getPollution()+10);
             setEnergyProduction(getEnergyProduction()+10);
         }
+    }
+    @Override
+    public String toString() {
+        return "Coal power plant (lvl: " + getLevel() + ")";
     }
 }

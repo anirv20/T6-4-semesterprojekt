@@ -6,19 +6,10 @@ public abstract class PowerPlant {
     public static final int MAXLEVEL = 3;
     private String description;
 
-    public PowerPlant(double pollution, double energyProduction, String description) {
+    public PowerPlant(double pollution, double energyProduction) {
         this.pollution = pollution;
         this.energyProduction = energyProduction;
-        this.description = description;
     }
-
-    /**public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }**/
 
     public double getPollution() {
         return pollution;
@@ -48,6 +39,14 @@ public abstract class PowerPlant {
         return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public abstract void upgrade();
 
+    @Override
+    public String toString() {
+        return "PowerPlant";
+    }
 }

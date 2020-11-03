@@ -1,10 +1,12 @@
 package worldofzuul;
 
 public class WindFarm extends PowerPlant {
-    private static long price = 124000;
+    private static long price = 1240000;
 
     public WindFarm() {
-        super(10, 50, "This is a wind turbine farm consisting of 10 wind turbines.");
+        super(4400, 400);
+        setDescription("This is a wind farm consisting of 100 wind turbines. A wind farm costs " + getPrice() +
+                " coins and produces " + getEnergyProduction() + " MW. The pollution is " + getPollution() + " kgCO2e/turn");
     }
     public static long getPrice() {
         return price;
@@ -17,5 +19,10 @@ public class WindFarm extends PowerPlant {
             setPollution(getPollution()-2);
             setEnergyProduction(getEnergyProduction()+10);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "WindFarm (lvl: " + getLevel() + ")";
     }
 }

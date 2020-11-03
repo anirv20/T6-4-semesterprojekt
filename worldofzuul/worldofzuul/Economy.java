@@ -20,7 +20,7 @@ public class Economy {
         }
     }
 
-    public double getBalance() {
+    public long getBalance() {
         return this.balance;
     }
 }

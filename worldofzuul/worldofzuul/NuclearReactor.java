@@ -4,7 +4,9 @@ public class NuclearReactor extends PowerPlant {
     private static long price = 3100000;
 
     public NuclearReactor() {
-        super(10, 50, "This is a nuclear reactor...");
+        super(12000, 1000);
+        setDescription("This is a nuclear reactor. A nuclear reactor costs " + getPrice() + " coins " +
+                "and produces " + getEnergyProduction() + " MW. The pollution is " + getPollution() + " kgCO2e/turn");
     }
     public static long getPrice() {
         return price;
@@ -17,5 +19,9 @@ public class NuclearReactor extends PowerPlant {
             setPollution(getPollution()-2);
             setEnergyProduction(getEnergyProduction()+10);
         }
+    }
+    @Override
+    public String toString() {
+        return "Nuclear reactor (lvl: " + getLevel() + ")";
     }
 }

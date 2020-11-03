@@ -1,14 +1,9 @@
 package worldofzuul;
 
 public class Pollution {
-    public final double LIMIT = 500.0;
+    public final double LIMIT = 5000000;
     private double totalPollution;
     private double turnPollution;
-
-    public Pollution(double totalPollution, double turnPollution) {
-        this.totalPollution = totalPollution;
-        this.turnPollution = turnPollution;
-    }
     
     public double getLimit() {
         return LIMIT;

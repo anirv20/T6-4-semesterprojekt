@@ -3,20 +3,36 @@ package worldofzuul;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Game
 {
     private Parser parser;
     private Room currentRoom;
     private Economy economy;
+    private Energy energy;
+    private Pollution pollution;
+    private UserInterface ui;
     private List<PowerPlant> powerPlants = new ArrayList<>();
     private Room cityHall, outside, nuclearReactor, coalPowerPlant, windFarm;
+    private int currentTurn = 1;
+    private final int MAXTURN = 30;
+    private boolean finished = false;
 
+    //Constructor of the Game object
     public Game() 
     {
         createRooms();
+        powerPlants.add(new CoalPowerPlant());
         parser = new Parser();
         economy = new Economy(1000000);
+        energy = new Energy();
+        pollution = new Pollution();
+        ui = new UserInterface();
+
+        sumTotalProduction();
+        sumTurnPollution();
+        energy.checkDifference();
     }
 
 
@@ -24,9 +40,12 @@ public class Game
     {
         outside = new Room("outside the main entrance of the City Hall");
         cityHall = new Room("in the City Hall");
-        nuclearReactor = new Room("at the nuclear power plant");
-        coalPowerPlant = new Room("at the coal power plant");
-        windFarm = new Room("at the wind turbines");
+        nuclearReactor = new Room("at the nuclear power plant. A nuclear reactor costs 3100000 coins " +
+                "and produces 1000 MW. The pollution is 12000 kgCO2e/turn");
+        coalPowerPlant = new Room("at the coal power plant. A coal power plant costs 450000 coins " +
+                "and produces 600 MW. The pollution is 492000 kgCO2e/turn");
+        windFarm = new Room("at the wind farms. A wind farm consists of 100 wind turbines, costs 1240000 coins " +
+                "and produces 400 MW. The pollution is 4400 kgCO2e/turn");
         
         cityHall.setExit("south", outside);
 
@@ -48,23 +67,26 @@ public class Game
     {
         printWelcome();
 
-                
         boolean finished = false;
+
         while (! finished) {
+            sumTotalProduction();
+            sumTurnPollution();
+            energy.checkDifference();
+
             Command command = parser.getCommand();
-            finished = processCommand(command);
+
+            if (processCommand(command) == true || quit() == true) {
+                finished = true;
+            }
         }
         System.out.println("Thank you for playing.  Good bye.");
     }
 
     private void printWelcome()
     {
-        System.out.println();
-        System.out.println("Welcome to World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
-        System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
-        System.out.println();
-        System.out.println(currentRoom.getLongDescription());
+        ui.printWelcome(currentRoom);
+        ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
     }
 
     private boolean processCommand(Command command) 
@@ -93,16 +115,22 @@ public class Game
         else if (commandWord == CommandWord.SHOW) {
             show(command);
         }
+        else if (commandWord == CommandWord.NEXT) {
+            nextTurn();
+        }
+        else if (commandWord == CommandWord.SELL) {
+            sellPowerPlant();
+        }
         return wantToQuit;
     }
 
     private void printHelp() 
     {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
-        System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
+        System.out.println();
+        System.out.println(currentRoom.getLongDescription());
+        System.out.println();
     }
 
     private void goRoom(Command command) 
@@ -130,6 +158,7 @@ public class Game
             if (economy.getBalance() >= WindFarm.getPrice()) {
                 powerPlants.add(new WindFarm());
                 economy.removeMoney(WindFarm.getPrice());
+                System.out.println("You have bought a wind farm.");
             } else {
                 System.out.println("Not enough money! A wind farm costs " + WindFarm.getPrice());
             }
@@ -137,6 +166,7 @@ public class Game
             if (economy.getBalance() >= NuclearReactor.getPrice()) {
                 powerPlants.add(new NuclearReactor());
                 economy.removeMoney(NuclearReactor.getPrice());
+                System.out.println("You have bought a nuclear reactor.");
             } else {
                 System.out.println("Not enough money! A nuclear reactor costs " + NuclearReactor.getPrice());
             }
@@ -144,6 +174,7 @@ public class Game
             if (economy.getBalance() >= CoalPowerPlant.getPrice()) {
                 powerPlants.add(new CoalPowerPlant());
                 economy.removeMoney(CoalPowerPlant.getPrice());
+                System.out.println("You have bought a coal power plant.");
             } else {
                 System.out.println("Not enough money! A coal power plant costs " + CoalPowerPlant.getPrice());
             }
@@ -151,15 +182,99 @@ public class Game
             System.out.println("You are not in the right location to buy a power plant");
         }
     }
+
+    private void sellPowerPlant() {
+        List<PowerPlant> sellList = new ArrayList<>();
+        if (currentRoom.equals(windFarm)) {
+            for (PowerPlant p : powerPlants) {
+                if (p instanceof WindFarm) {
+                    sellList.add(p);
+                }
+            }
+        } else if (currentRoom.equals(coalPowerPlant)) {
+            for (PowerPlant p : powerPlants) {
+                if (p instanceof CoalPowerPlant) {
+                    sellList.add(p);
+                }
+            }
+        } else if (currentRoom.equals(nuclearReactor)) {
+            for (PowerPlant p : powerPlants) {
+                if (p instanceof NuclearReactor) {
+                    sellList.add(p);
+                }
+            }
+        }
+        System.out.println("Choose an index from 1 to " + sellList.size() + " to sell");
+        System.out.println(sellList.toString());
+        Scanner s = new Scanner(System.in);
+        int nextInt = s.nextInt();
+        s.close();
+        PowerPlant toSell = sellList.get(nextInt-1);
+        powerPlants.remove(toSell);
+        //to do: check if user input is valid
+    }
+
+    public void sumTotalProduction() {
+        energy.setTotalProduction(0);
+        for (PowerPlant p : powerPlants) {
+            energy.setTotalProduction(energy.getTotalProduction() + p.getEnergyProduction());
+        }
+    }
+
+    public void sumTurnPollution() {
+        pollution.setTurnPollution(0);
+        for (PowerPlant p : powerPlants) {
+            pollution.setTurnPollution(pollution.getTurnPollution() + p.getPollution());
+        }
+    }
+
+    public void nextTurn() {
+        if (currentTurn < MAXTURN) {
+            currentTurn++;
+            sumTotalProduction();
+            sumTurnPollution();
+            energy.checkDifference();
+            pollution.setTotalPollution(pollution.getTotalPollution() + pollution.getTurnPollution());
+
+            economy.addMoney(100000);
+
+            energy.setDemand(energy.getDemand()*1.2);
+            if (energy.getDifference() < 0) {
+                economy.removeMoney((long)energy.getDifference()*1000);
+                System.out.println("You were not producing enough power for the city and lost " + (long)energy.getDifference()*1000 + " coins");
+            } else if (energy.getDifference() > 0) {
+                economy.addMoney((long)energy.getDifference()*1000);
+                System.out.println("You are selling power and earned " + (long)energy.getDifference()*1000 + " coins");
+            }
+
+            if (pollution.getTotalPollution() >= pollution.LIMIT) {
+                finished = true;
+                System.out.println("You polluted too much");
+            }
+            if (economy.getBalance() < 0) {
+                finished = true;
+                System.out.println("You are bankrupt.");
+            }
+            if (finished == false) {
+                System.out.println("You earned 100000 coins from taxes.");
+                ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
+            }
+        } else {
+            finished = true;
+        }
+    }
+
     public void show(Command command) {
         if(!command.hasSecondWord()) {
-            System.out.println("Show what?");
+            System.out.println("Show \"power-plants\" or \"balance\"?");
             return;
         }
-        if (command.getSecondWord().equals("plants")) {
+        if (command.getSecondWord().equals("power-plants")) {
             System.out.println(powerPlants.toString());
         } else if (command.getSecondWord().equals("balance")) {
             System.out.println(economy.getBalance());
+        } else if (command.getSecondWord().equals("stats")) {
+            ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
         } else {
             System.out.println("I don't understand");
         }
@@ -173,6 +288,13 @@ public class Game
         }
         else {
             return true;
+        }
+    }
+    private boolean quit() {
+        if (this.finished == true) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
