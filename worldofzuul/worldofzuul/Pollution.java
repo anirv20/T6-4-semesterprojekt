@@ -13,6 +13,10 @@ public class Pollution {
         return totalPollution;
     }
 
+    public double getPollutionPercent() {
+        return totalPollution/LIMIT*100;
+    }
+
     public void setTotalPollution(double totalPollution) {
         this.totalPollution = totalPollution;
     }

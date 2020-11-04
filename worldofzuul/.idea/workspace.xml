@@ -22,23 +22,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40996821-cfb4-4439-936e-c5174dfbd027" name="Default Changelist" comment="buy PowerPlant method">
-      <change afterPath="$PROJECT_DIR$/worldofzuul/UserInterface.java" afterDir="false" />
+    <list default="true" id="40996821-cfb4-4439-936e-c5174dfbd027" name="Default Changelist" comment="lots of stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/CommandWord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/CommandWord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/Economy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/Economy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/PowerPlant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/PowerPlant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/WindTurbine.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/CoalPowerPlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/CoalPowerPlant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/CommandWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/CommandWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Economy.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Economy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Energy.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Energy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/NuclearReactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/NuclearReactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/Pollution.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Pollution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/PowerPlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/PowerPlant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/UserInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/WindFarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/WindFarm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,17 +77,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Start" />
@@ -118,7 +99,8 @@
       <workItem from="1603878801835" duration="317000" />
       <workItem from="1603890844676" duration="2939000" />
       <workItem from="1604316428924" duration="6635000" />
-      <workItem from="1604398039521" duration="12585000" />
+      <workItem from="1604398039521" duration="13235000" />
+      <workItem from="1604487920049" duration="5860000" />
     </task>
     <task id="LOCAL-00001" summary="Tried to delete &quot;Out&quot;">
       <created>1603891056594</created>
@@ -134,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604323018216</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="lots of stuff">
+      <created>1604412085521</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604412085521</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,38 +144,39 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Tried to delete &quot;Out&quot;" />
     <MESSAGE value="buy PowerPlant method" />
-    <option name="LAST_COMMIT_MESSAGE" value="buy PowerPlant method" />
+    <MESSAGE value="lots of stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="lots of stuff" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser" timestamp="1604398278384">
+    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser" timestamp="1604493331076">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1604398278384" />
+    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1604493331076" />
     <state x="569" y="168" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1604150401714" />
     <state x="531" y="235" key="FileChooserDialogImpl" timestamp="1603879114588">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="531" y="235" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1603879114588" />
-    <state width="1458" height="303" key="GridCell.Tab.0.bottom" timestamp="1604412009637">
+    <state width="1458" height="521" key="GridCell.Tab.0.bottom" timestamp="1604493647389">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="303" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1604412009637" />
-    <state width="1458" height="303" key="GridCell.Tab.0.center" timestamp="1604412009637">
+    <state width="1458" height="521" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1604493647389" />
+    <state width="1458" height="521" key="GridCell.Tab.0.center" timestamp="1604493647389">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="303" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1604412009637" />
-    <state width="1458" height="303" key="GridCell.Tab.0.left" timestamp="1604412009637">
+    <state width="1458" height="521" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1604493647389" />
+    <state width="1458" height="521" key="GridCell.Tab.0.left" timestamp="1604493647389">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="303" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1604412009637" />
-    <state width="1458" height="303" key="GridCell.Tab.0.right" timestamp="1604412009637">
+    <state width="1458" height="521" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1604493647389" />
+    <state width="1458" height="521" key="GridCell.Tab.0.right" timestamp="1604493647389">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="303" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1604412009637" />
-    <state x="343" y="213" key="Vcs.Push.Dialog.v2" timestamp="1604323040696">
+    <state width="1458" height="521" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1604493647389" />
+    <state x="343" y="213" key="Vcs.Push.Dialog.v2" timestamp="1604414881885">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="343" y="213" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1604323040696" />
+    <state x="343" y="213" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1604414881885" />
     <state x="175" y="164" key="new project wizard" timestamp="1603879117667">
       <screen x="0" y="0" width="1500" height="960" />
     </state>

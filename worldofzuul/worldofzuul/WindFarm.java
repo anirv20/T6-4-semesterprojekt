@@ -4,7 +4,7 @@ public class WindFarm extends PowerPlant {
     private static long price = 1240000;
 
     public WindFarm() {
-        super(4400, 400);
+        super(4400, 400, price);
         setDescription("This is a wind farm consisting of 100 wind turbines. A wind farm costs " + getPrice() +
                 " coins and produces " + getEnergyProduction() + " MW. The pollution is " + getPollution() + " kgCO2e/turn");
     }
@@ -13,11 +13,14 @@ public class WindFarm extends PowerPlant {
     }
 
     @Override
-    public void upgrade() {
+    public boolean upgrade() {
         if (getLevel() < PowerPlant.MAXLEVEL) {
             setLevel(getLevel() + 1);
-            setPollution(getPollution()-2);
-            setEnergyProduction(getEnergyProduction()+10);
+            setPollution(getPollution()*0.75);
+            setEnergyProduction(getEnergyProduction()*1.5);
+            return true;
+        } else {
+            return false;
         }
     }
 

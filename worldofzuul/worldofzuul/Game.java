@@ -1,5 +1,6 @@
 package worldofzuul;
 
+import java.sql.Array;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
@@ -85,7 +86,7 @@ public class Game
 
     private void printWelcome()
     {
-        ui.printWelcome(currentRoom);
+        ui.printWelcome(currentRoom, parser);
         ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
     }
 
@@ -119,7 +120,9 @@ public class Game
             nextTurn();
         }
         else if (commandWord == CommandWord.SELL) {
-            sellPowerPlant();
+            sellPowerPlant(command);
+        } else if (commandWord == CommandWord.UPGRADE) {
+            upgradePowerPlant(command);
         }
         return wantToQuit;
     }
@@ -150,6 +153,9 @@ public class Game
         else {
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
+            if (getCurrentPowerPlants().size() > 0) {
+                System.out.println(getCurrentPowerPlants().toString());
+            }
         }
     }
 
@@ -183,35 +189,44 @@ public class Game
         }
     }
 
-    private void sellPowerPlant() {
-        List<PowerPlant> sellList = new ArrayList<>();
-        if (currentRoom.equals(windFarm)) {
-            for (PowerPlant p : powerPlants) {
-                if (p instanceof WindFarm) {
-                    sellList.add(p);
+    private void sellPowerPlant(Command command) {
+        List<PowerPlant> sellList = getCurrentPowerPlants();
+
+        if(sellList.size() == 0) {
+            System.out.println("You don't have any PowerPlants to sell here");
+        } else if (!command.hasSecondWord()) {
+            System.out.println("Choose an index from 1 to " + sellList.size() + " to sell");
+            System.out.println(sellList.toString());
+        } else {
+            int sellIndex = Integer.parseInt(command.getSecondWord());
+            powerPlants.remove(sellList.get(sellIndex-1));
+            economy.addMoney(sellList.get(sellIndex-1).getValue());
+            System.out.println("Sold one power plant (+ " + sellList.get(sellIndex-1).getValue() + " coins)");
+        }
+    }
+
+    private void upgradePowerPlant(Command command) {
+        List<PowerPlant> upgradeList = getCurrentPowerPlants();
+
+        if(upgradeList.size() == 0) {
+            System.out.println("You don't have any PowerPlants to upgrade here");
+        } else if (!command.hasSecondWord()) {
+            System.out.println("Choose an index from 1 to " + upgradeList.size() + " to upgrade");
+            System.out.println(upgradeList.toString());
+        } else {
+            int upgradeIndex = Integer.parseInt(command.getSecondWord()) - 1;
+            if (economy.getBalance() >= upgradeList.get(upgradeIndex).getUpgradePrice()) {
+                boolean success = upgradeList.get(upgradeIndex).upgrade();
+                if (success) {
+                    economy.removeMoney(upgradeList.get(upgradeIndex).getUpgradePrice());
+                    System.out.println("Upgraded 1 power plant");
+                } else {
+                    System.out.println("The power plant is at max level");
                 }
-            }
-        } else if (currentRoom.equals(coalPowerPlant)) {
-            for (PowerPlant p : powerPlants) {
-                if (p instanceof CoalPowerPlant) {
-                    sellList.add(p);
-                }
-            }
-        } else if (currentRoom.equals(nuclearReactor)) {
-            for (PowerPlant p : powerPlants) {
-                if (p instanceof NuclearReactor) {
-                    sellList.add(p);
-                }
+            } else {
+                System.out.println("You don't have enough money. Upgrading this power plant costs " + upgradeList.get(upgradeIndex).getUpgradePrice() + " coins");
             }
         }
-        System.out.println("Choose an index from 1 to " + sellList.size() + " to sell");
-        System.out.println(sellList.toString());
-        Scanner s = new Scanner(System.in);
-        int nextInt = s.nextInt();
-        s.close();
-        PowerPlant toSell = sellList.get(nextInt-1);
-        powerPlants.remove(toSell);
-        //to do: check if user input is valid
     }
 
     public void sumTotalProduction() {
@@ -238,12 +253,12 @@ public class Game
 
             economy.addMoney(100000);
 
-            energy.setDemand(energy.getDemand()*1.2);
+            energy.setDemand(energy.getDemand()*1.1);
             if (energy.getDifference() < 0) {
-                economy.removeMoney((long)energy.getDifference()*1000);
+                economy.removeMoney(Math.abs((long)energy.getDifference()*1000));
                 System.out.println("You were not producing enough power for the city and lost " + (long)energy.getDifference()*1000 + " coins");
             } else if (energy.getDifference() > 0) {
-                economy.addMoney((long)energy.getDifference()*1000);
+                economy.addMoney(Math.abs((long)energy.getDifference()*1000));
                 System.out.println("You are selling power and earned " + (long)energy.getDifference()*1000 + " coins");
             }
 
@@ -278,6 +293,33 @@ public class Game
         } else {
             System.out.println("I don't understand");
         }
+    }
+
+    public List<PowerPlant> getCurrentPowerPlants() {
+        //creates a list of power plants the player can sell/upgrade at the current location
+        List<PowerPlant> currentPowerPlants = new ArrayList<>();
+        if (currentRoom.equals(windFarm)) {
+            //iterates through all the power plants and adds the power plants at the location to the list
+            for (PowerPlant p : powerPlants) {
+                if (p instanceof WindFarm) {
+                    currentPowerPlants.add(p);
+                }
+            }
+        } else if (currentRoom.equals(coalPowerPlant)) {
+            for (PowerPlant p : powerPlants) {
+                if (p instanceof CoalPowerPlant) {
+                    currentPowerPlants.add(p);
+                }
+            }
+        } else if (currentRoom.equals(nuclearReactor)) {
+            for (PowerPlant p : powerPlants) {
+                if (p instanceof NuclearReactor) {
+                    currentPowerPlants.add(p);
+                }
+            }
+        }
+        return currentPowerPlants;
+
     }
 
     private boolean quit(Command command) 
