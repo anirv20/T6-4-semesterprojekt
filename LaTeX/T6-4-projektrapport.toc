@@ -13,15 +13,18 @@
 \contentsline {subsection}{\numberline {4.2}Designfasen}{5}{}%
 \contentsline {subsection}{\numberline {4.3}Implementeringsfasen}{5}{}%
 \contentsline {subsection}{\numberline {4.4}Testfasen}{5}{}%
-\contentsline {section}{\numberline {5}Tidsplan}{5}{}%
-\contentsline {section}{\numberline {6}Faglige vidensgrundlag}{6}{}%
-\contentsline {subsection}{\numberline {6.1}Teori og faglig viden}{6}{}%
-\contentsline {section}{\numberline {7}Hovedtekst}{6}{}%
-\contentsline {subsection}{\numberline {7.1}Analysefase}{6}{}%
-\contentsline {subsubsection}{Programspecifikation}{6}{}%
-\contentsline {subsubsection}{Kravspecifikation}{7}{}%
-\contentsline {subsubsection}{Verb/noun-metode}{7}{}%
-\contentsline {subsection}{\numberline {7.2}Designfase}{7}{}%
-\contentsline {subsubsection}{CRC-kort}{7}{}%
-\contentsline {subsubsection}{Klassediagram}{7}{}%
-\contentsline {chapter}{References}{8}{}%
+\contentsline {section}{\numberline {5}Planlægning}{6}{}%
+\contentsline {subsection}{\numberline {5.1}Iteration 1}{6}{}%
+\contentsline {subsection}{\numberline {5.2}Iteration 2}{7}{}%
+\contentsline {section}{\numberline {6}Faglige vidensgrundlag}{7}{}%
+\contentsline {subsection}{\numberline {6.1}Teori og faglig viden}{7}{}%
+\contentsline {section}{\numberline {7}Hovedtekst}{10}{}%
+\contentsline {subsection}{\numberline {7.1}Analysefase}{10}{}%
+\contentsline {subsubsection}{Programspecifikation}{10}{}%
+\contentsline {subsubsection}{Kravspecifikation}{11}{}%
+\contentsline {subsubsection}{Verb/noun-metode}{13}{}%
+\contentsline {subsection}{\numberline {7.2}Designfase}{15}{}%
+\contentsline {subsubsection}{CRC-kort}{15}{}%
+\contentsline {subsubsection}{Klassediagram}{18}{}%
+\contentsline {subsection}{\numberline {7.3}Implementeringsfasen}{18}{}%
+\contentsline {chapter}{References}{20}{}%
