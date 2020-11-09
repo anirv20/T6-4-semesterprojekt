@@ -10,15 +10,15 @@ public class Room
     private String description;
     private HashMap<String, Room> exits;
 
-    public Room(String description) 
+    public Room(String description)
     {
         this.description = description;
-        exits = new HashMap<String, Room>();
+        this.exits = new HashMap<String, Room>();
     }
 
     public void setExit(String direction, Room neighbor) 
     {
-        exits.put(direction, neighbor);
+        this.exits.put(direction, neighbor);
     }
 
     public String getShortDescription()
