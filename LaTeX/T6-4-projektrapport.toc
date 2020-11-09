@@ -2,15 +2,26 @@
 \contentsline {section}{\numberline {2}Problemanalyse}{2}{}%
 \contentsline {subsection}{\numberline {2.1}Igangsættende problem}{2}{}%
 \contentsline {subsection}{\numberline {2.2}Identifikation}{2}{}%
-\contentsline {subsection}{\numberline {2.3}Egentlige problem}{2}{}%
-\contentsline {subsection}{\numberline {2.4}Verifikation}{2}{}%
-\contentsline {section}{\numberline {3}Problemformulering}{2}{}%
-\contentsline {subsection}{\numberline {3.1}Hovedspørgsmål}{2}{}%
-\contentsline {subsection}{\numberline {3.2}Underspørgsmål}{2}{}%
-\contentsline {subsection}{\numberline {3.3}Afgrænsning}{3}{}%
-\contentsline {section}{\numberline {4}Metode}{3}{}%
-\contentsline {subsection}{\numberline {4.1}Analyse-/designfasen}{3}{}%
-\contentsline {subsection}{\numberline {4.2}Implementeringsfasen}{3}{}%
-\contentsline {subsection}{\numberline {4.3}Testfasen}{3}{}%
-\contentsline {section}{\numberline {5}Tidsplan}{4}{}%
-\contentsline {chapter}{References}{6}{}%
+\contentsline {subsection}{\numberline {2.3}Egentlige problem}{3}{}%
+\contentsline {subsection}{\numberline {2.4}Verifikation}{3}{}%
+\contentsline {section}{\numberline {3}Problemformulering}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Hovedspørgsmål}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Underspørgsmål}{4}{}%
+\contentsline {subsection}{\numberline {3.3}Afgrænsning}{4}{}%
+\contentsline {section}{\numberline {4}Metode}{4}{}%
+\contentsline {subsection}{\numberline {4.1}Analysefasen}{4}{}%
+\contentsline {subsection}{\numberline {4.2}Designfasen}{5}{}%
+\contentsline {subsection}{\numberline {4.3}Implementeringsfasen}{5}{}%
+\contentsline {subsection}{\numberline {4.4}Testfasen}{5}{}%
+\contentsline {section}{\numberline {5}Tidsplan}{5}{}%
+\contentsline {section}{\numberline {6}Faglige vidensgrundlag}{6}{}%
+\contentsline {subsection}{\numberline {6.1}Teori og faglig viden}{6}{}%
+\contentsline {section}{\numberline {7}Hovedtekst}{6}{}%
+\contentsline {subsection}{\numberline {7.1}Analysefase}{6}{}%
+\contentsline {subsubsection}{Programspecifikation}{6}{}%
+\contentsline {subsubsection}{Kravspecifikation}{7}{}%
+\contentsline {subsubsection}{Verb/noun-metode}{7}{}%
+\contentsline {subsection}{\numberline {7.2}Designfase}{7}{}%
+\contentsline {subsubsection}{CRC-kort}{7}{}%
+\contentsline {subsubsection}{Klassediagram}{7}{}%
+\contentsline {chapter}{References}{8}{}%
