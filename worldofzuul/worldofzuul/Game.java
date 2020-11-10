@@ -66,7 +66,7 @@ public class Game
 
     public void play() 
     {
-        printWelcome();
+        printWelcome(); //Beginning of the game
 
         boolean finished = false;
 
@@ -90,7 +90,7 @@ public class Game
         ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
     }
 
-    private boolean processCommand(Command command) 
+    private boolean processCommand(Command command) //Interprets the commands from the user
     {
         boolean wantToQuit = false;
 
@@ -136,7 +136,7 @@ public class Game
         System.out.println();
     }
 
-    private void goRoom(Command command) 
+    private void goRoom(Command command)
     {
         if(!command.hasSecondWord()) {
             System.out.println("Go where?");
@@ -160,6 +160,7 @@ public class Game
     }
 
     private void buyPowerPlant() {
+        //Checks which room you are in, and buys the corresponding power plant if you have enough money
         if (currentRoom.equals(windFarm)) {
             if (economy.getBalance() >= WindFarm.getPrice()) {
                 powerPlants.add(new WindFarm());
@@ -190,6 +191,7 @@ public class Game
     }
 
     private void sellPowerPlant(Command command) {
+        //Makes an arraylist of sellable power plants in the room and lets you choose which power plant to sell.
         List<PowerPlant> sellList = getCurrentPowerPlants();
 
         if(sellList.size() == 0) {
@@ -206,6 +208,7 @@ public class Game
     }
 
     private void upgradePowerPlant(Command command) {
+        //Makes an arraylist of upgradeable power plants in the room and lets you choose which power plant to upgrade.
         List<PowerPlant> upgradeList = getCurrentPowerPlants();
 
         if(upgradeList.size() == 0) {
@@ -230,6 +233,7 @@ public class Game
     }
 
     public void sumTotalProduction() {
+        // Calculates the total production of all currently owned power plants
         energy.setTotalProduction(0);
         for (PowerPlant p : powerPlants) {
             energy.setTotalProduction(energy.getTotalProduction() + p.getEnergyProduction());
@@ -237,13 +241,14 @@ public class Game
     }
 
     public void sumTurnPollution() {
+        // Calculates the total pollution per turn of all currently owned power plants.
         pollution.setTurnPollution(0);
         for (PowerPlant p : powerPlants) {
             pollution.setTurnPollution(pollution.getTurnPollution() + p.getPollution());
         }
     }
 
-    public void nextTurn() {
+    public void nextTurn() { //Goes to next turn and updates stats. Checks for lose conditions.
         if (currentTurn < MAXTURN) {
             currentTurn++;
             sumTotalProduction();
