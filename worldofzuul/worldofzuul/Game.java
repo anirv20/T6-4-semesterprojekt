@@ -68,20 +68,20 @@ public class Game
     {
         printWelcome(); //Beginning of the game
 
-        boolean finished = false;
+        //boolean finished = false;
 
-        while (! finished) {
+        while (!this.finished) {
             sumTotalProduction();
             sumTurnPollution();
             energy.checkDifference();
 
             Command command = parser.getCommand();
 
-            if (processCommand(command) == true || quit() == true) {
-                finished = true;
+            if (processCommand(command)) { //if (processCommand(command) == true || quit()== true)
+                this.finished = true;
             }
         }
-        System.out.println("Thank you for playing.  Good bye.");
+        //System.out.println("Thank you for playing.  Good bye.");
     }
 
     private void printWelcome()
@@ -121,7 +121,8 @@ public class Game
         }
         else if (commandWord == CommandWord.SELL) {
             sellPowerPlant(command);
-        } else if (commandWord == CommandWord.UPGRADE) {
+        }
+        else if (commandWord == CommandWord.UPGRADE) {
             upgradePowerPlant(command);
         }
         return wantToQuit;
@@ -256,31 +257,36 @@ public class Game
             energy.checkDifference();
             pollution.setTotalPollution(pollution.getTotalPollution() + pollution.getTurnPollution());
 
-            economy.addMoney(100000);
+            economy.addMoney(100000); //Adds money from taxes
 
             energy.setDemand(energy.getDemand()*1.1);
             if (energy.getDifference() < 0) {
-                economy.removeMoney(Math.abs((long)energy.getDifference()*1000));
+                if (!economy.removeMoney(Math.abs((long)energy.getDifference()*1000))){
+                    lose(1);
+                }
                 System.out.println("You were not producing enough power for the city and lost " + (long)energy.getDifference()*1000 + " coins");
-            } else if (energy.getDifference() > 0) {
+            }
+            else if (energy.getDifference() > 0) {
                 economy.addMoney(Math.abs((long)energy.getDifference()*1000));
                 System.out.println("You are selling power and earned " + (long)energy.getDifference()*1000 + " coins");
             }
 
             if (pollution.getTotalPollution() >= pollution.LIMIT) {
-                finished = true;
-                System.out.println("You polluted too much");
+                lose(0);
+                //System.out.println("You polluted too much");
             }
             if (economy.getBalance() < 0) {
-                finished = true;
+                /*finished = true;
                 System.out.println("You are bankrupt.");
+                */
+                lose(1);
             }
-            if (finished == false) {
+            if (!finished) {
                 System.out.println("You earned 100000 coins from taxes.");
                 ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
             }
         } else {
-            finished = true;
+            win();
         }
     }
 
@@ -326,6 +332,19 @@ public class Game
         return currentPowerPlants;
 
     }
+    private void lose(int reason) {
+        System.out.println("You loose");
+        String[] reasons = {"You polluted too much."
+                , "You are bankrupt. Current balance :" + economy.getBalance() };
+        System.out.println(reasons[reason]);
+        //ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
+        quit();
+    }
+    private void win() {
+        System.out.println("You win.");
+        //ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
+        quit();
+    }
 
     private boolean quit(Command command) 
     {
@@ -334,14 +353,12 @@ public class Game
             return false;
         }
         else {
-            return true;
+            return quit();
         }
     }
     private boolean quit() {
-        if (this.finished == true) {
-            return true;
-        } else {
-            return false;
+        System.out.println("Thank you for playing Good bye.");
+        this.finished = true;
+        return true;
         }
-    }
 }
