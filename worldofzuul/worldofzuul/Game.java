@@ -18,7 +18,7 @@ public class Game
     private Room cityHall, outside, nuclearReactor, coalPowerPlant, windFarm;
     private int currentTurn = 1;
     private final int MAXTURN = 30;
-    private boolean finished = false;
+    //private boolean finished = false;
 
     //Constructor of the Game object
     public Game() 
@@ -68,18 +68,17 @@ public class Game
     {
         printWelcome(); //Beginning of the game
 
-        //boolean finished = false;
+        boolean finished = false;
 
-        while (!this.finished) {
+        while (!finished) {
             sumTotalProduction();
             sumTurnPollution();
             energy.checkDifference();
 
             Command command = parser.getCommand();
 
-            if (processCommand(command)) { //if (processCommand(command) == true || quit()== true)
-                this.finished = true;
-            }
+            finished = (processCommand(command));  //if (processCommand(command) == true || quit()== true)
+
         }
         //System.out.println("Thank you for playing.  Good bye.");
     }
@@ -117,7 +116,7 @@ public class Game
             show(command);
         }
         else if (commandWord == CommandWord.NEXT) {
-            nextTurn();
+             wantToQuit = nextTurn();
         }
         else if (commandWord == CommandWord.SELL) {
             sellPowerPlant(command);
@@ -249,7 +248,7 @@ public class Game
         }
     }
 
-    public void nextTurn() { //Goes to next turn and updates stats. Checks for lose conditions.
+    public boolean nextTurn() { //Goes to next turn and updates stats. Checks for lose conditions.
         if (currentTurn < MAXTURN) {
             currentTurn++;
             sumTotalProduction();
@@ -270,23 +269,27 @@ public class Game
             }
 
             if (pollution.getTotalPollution() >= pollution.LIMIT) {
-                lose(0);
+                 return lose(0);
                 //System.out.println("You polluted too much");
             }
             if (economy.getBalance() < 0) {
                 /*finished = true;
                 System.out.println("You are bankrupt.");
                 */
-                lose(1);
+                return lose(1);
             }
-            if (!finished) {
+            /*if (!finished) {
                 System.out.println("You earned 100000 coins from taxes.");
                 ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
-            }
-        } else {
-            win();
+            */}
+        else {
+            return win();
         }
+        System.out.println("You earned 100000 coins from taxes.");
+        ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
+        return false;
     }
+
 
     public void show(Command command) {
         if(!command.hasSecondWord()) {
@@ -330,18 +333,18 @@ public class Game
         return currentPowerPlants;
 
     }
-    private void lose(int reason) {
+    private boolean lose(int reason) {
         System.out.println("You loose");
         String[] reasons = {"You polluted too much."
                 , "You are bankrupt. Current balance :" + economy.getBalance() };
         System.out.println(reasons[reason]);
         //ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
-        quit();
+        return quit();
     }
-    private void win() {
+    private boolean win() {
         System.out.println("You win.");
         //ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
-        quit();
+        return quit();
     }
 
     private boolean quit(Command command) 
@@ -356,7 +359,6 @@ public class Game
     }
     private boolean quit() {
         System.out.println("Thank you for playing Good bye.");
-        this.finished = true;
         return true;
         }
 }
