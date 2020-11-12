@@ -19,6 +19,13 @@ public class Economy {
             return false;
         }
     }
+    public boolean removeMoney(long amount, boolean overrule) {
+        boolean success = (removeMoney(amount));
+        if (!success && overrule) {
+            this.balance -= amount;
+        }
+        return success;
+    }
 
     public long getBalance() {
         return this.balance;

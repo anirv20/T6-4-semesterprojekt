@@ -261,9 +261,7 @@ public class Game
 
             energy.setDemand(energy.getDemand()*1.1);
             if (energy.getDifference() < 0) {
-                if (!economy.removeMoney(Math.abs((long)energy.getDifference()*1000))){
-                    lose(1);
-                }
+                economy.removeMoney(Math.abs((long)energy.getDifference()*1000), true);
                 System.out.println("You were not producing enough power for the city and lost " + (long)energy.getDifference()*1000 + " coins");
             }
             else if (energy.getDifference() > 0) {
