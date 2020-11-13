@@ -334,7 +334,7 @@ public class Game
 
     }
     private boolean lose(int reason) {
-        System.out.println("You loose");
+        System.out.println("You lose");
         String[] reasons = {"You polluted too much."
                 , "You are bankrupt. Current balance :" + economy.getBalance() };
         System.out.println(reasons[reason]);
