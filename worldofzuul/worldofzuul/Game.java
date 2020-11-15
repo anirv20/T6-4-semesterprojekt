@@ -200,10 +200,16 @@ public class Game
             System.out.println("Choose an index from 1 to " + sellList.size() + " to sell");
             System.out.println(sellList.toString());
         } else {
-            int sellIndex = Integer.parseInt(command.getSecondWord());
-            powerPlants.remove(sellList.get(sellIndex-1));
-            economy.addMoney(sellList.get(sellIndex-1).getValue());
-            System.out.println("Sold one power plant (+ " + sellList.get(sellIndex-1).getValue() + " coins)");
+            try {
+                int sellIndex = Integer.parseInt(command.getSecondWord());
+                powerPlants.remove(sellList.get(sellIndex-1));
+                economy.addMoney(sellList.get(sellIndex-1).getValue());
+                System.out.println("Sold one power plant (+ " + sellList.get(sellIndex-1).getValue() + " coins)");
+            } catch(IndexOutOfBoundsException e) {
+                System.out.println("Invalid number. Try again.");
+                System.out.println("Choose an index from 1 to " + sellList.size() + " to sell");
+            }
+
         }
     }
 
@@ -218,17 +224,23 @@ public class Game
             System.out.println(upgradeList.toString());
         } else {
             int upgradeIndex = Integer.parseInt(command.getSecondWord()) - 1;
-            if (economy.getBalance() >= upgradeList.get(upgradeIndex).getUpgradePrice()) {
-                boolean success = upgradeList.get(upgradeIndex).upgrade();
-                if (success) {
-                    economy.removeMoney(upgradeList.get(upgradeIndex).getUpgradePrice());
-                    System.out.println("Upgraded 1 power plant");
+            try {
+                if (economy.getBalance() >= upgradeList.get(upgradeIndex).getUpgradePrice()) {
+                    boolean success = upgradeList.get(upgradeIndex).upgrade();
+                    if (success) {
+                        economy.removeMoney(upgradeList.get(upgradeIndex).getUpgradePrice());
+                        System.out.println("Upgraded 1 power plant");
+                    } else {
+                        System.out.println("The power plant is at max level");
+                    }
                 } else {
-                    System.out.println("The power plant is at max level");
+                    System.out.println("You don't have enough money. Upgrading this power plant costs " + upgradeList.get(upgradeIndex).getUpgradePrice() + " coins");
                 }
-            } else {
-                System.out.println("You don't have enough money. Upgrading this power plant costs " + upgradeList.get(upgradeIndex).getUpgradePrice() + " coins");
+            } catch(IndexOutOfBoundsException e) {
+                System.out.println("Invalid number. Try again.");
+                System.out.println("Choose an index from 1 to " + upgradeList.size() + " to upgrade");
             }
+
         }
     }
 
