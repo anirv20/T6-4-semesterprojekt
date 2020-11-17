@@ -1,0 +1,30 @@
+\contentsline {section}{\numberline {1}Introduktion}{1}{}%
+\contentsline {section}{\numberline {2}Problemanalyse}{2}{}%
+\contentsline {subsection}{\numberline {2.1}Igangsættende problem}{2}{}%
+\contentsline {subsection}{\numberline {2.2}Identifikation}{2}{}%
+\contentsline {subsection}{\numberline {2.3}Egentlige problem}{3}{}%
+\contentsline {subsection}{\numberline {2.4}Verifikation}{3}{}%
+\contentsline {section}{\numberline {3}Problemformulering}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Hovedspørgsmål}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Underspørgsmål}{4}{}%
+\contentsline {subsection}{\numberline {3.3}Afgrænsning}{4}{}%
+\contentsline {section}{\numberline {4}Metode}{4}{}%
+\contentsline {subsection}{\numberline {4.1}Analysefasen}{4}{}%
+\contentsline {subsection}{\numberline {4.2}Designfasen}{5}{}%
+\contentsline {subsection}{\numberline {4.3}Implementeringsfasen}{5}{}%
+\contentsline {subsection}{\numberline {4.4}Testfasen}{5}{}%
+\contentsline {section}{\numberline {5}Planlægning}{6}{}%
+\contentsline {subsection}{\numberline {5.1}Iteration 1}{6}{}%
+\contentsline {subsection}{\numberline {5.2}Iteration 2}{7}{}%
+\contentsline {section}{\numberline {6}Faglige vidensgrundlag}{7}{}%
+\contentsline {subsection}{\numberline {6.1}Teori og faglig viden}{7}{}%
+\contentsline {section}{\numberline {7}Hovedtekst}{10}{}%
+\contentsline {subsection}{\numberline {7.1}Analysefase}{10}{}%
+\contentsline {subsubsection}{Programspecifikation}{10}{}%
+\contentsline {subsubsection}{Kravspecifikation}{11}{}%
+\contentsline {subsubsection}{Verb/noun-metode}{13}{}%
+\contentsline {subsection}{\numberline {7.2}Designfase}{15}{}%
+\contentsline {subsubsection}{CRC-kort}{15}{}%
+\contentsline {subsubsection}{Klassediagram}{18}{}%
+\contentsline {subsection}{\numberline {7.3}Implementeringsfasen}{18}{}%
+\contentsline {chapter}{References}{20}{}%

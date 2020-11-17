@@ -13,7 +13,7 @@ public class WindFarm extends PowerPlant {
     }
 
     @Override
-    public boolean upgrade() {
+    public boolean upgrade() { // Changes the power plant's values when you upgrade.
         if (getLevel() < PowerPlant.MAXLEVEL) {
             setLevel(getLevel() + 1);
             setPollution(getPollution()*0.75);
