@@ -18,7 +18,7 @@ public class Game
     private Room cityHall, outside, nuclearReactor, coalPowerPlant, windFarm;
     private int currentTurn = 1;
     private final int MAXTURN = 30;
-    private boolean finished = false;
+    //private boolean finished = false;
 
     //Constructor of the Game object
     public Game() 
@@ -70,18 +70,17 @@ public class Game
 
         boolean finished = false;
 
-        while (! finished) {
+        while (!finished) {
             sumTotalProduction();
             sumTurnPollution();
             energy.checkDifference();
 
             Command command = parser.getCommand();
 
-            if (processCommand(command) == true || quit() == true) {
-                finished = true;
-            }
+            finished = (processCommand(command));  //if (processCommand(command) == true || quit()== true)
+
         }
-        System.out.println("Thank you for playing.  Good bye.");
+        //System.out.println("Thank you for playing.  Good bye.");
     }
 
     private void printWelcome()
@@ -117,11 +116,12 @@ public class Game
             show(command);
         }
         else if (commandWord == CommandWord.NEXT) {
-            nextTurn();
+             wantToQuit = nextTurn();
         }
         else if (commandWord == CommandWord.SELL) {
             sellPowerPlant(command);
-        } else if (commandWord == CommandWord.UPGRADE) {
+        }
+        else if (commandWord == CommandWord.UPGRADE) {
             upgradePowerPlant(command);
         }
         return wantToQuit;
@@ -200,10 +200,16 @@ public class Game
             System.out.println("Choose an index from 1 to " + sellList.size() + " to sell");
             System.out.println(sellList.toString());
         } else {
-            int sellIndex = Integer.parseInt(command.getSecondWord());
-            powerPlants.remove(sellList.get(sellIndex-1));
-            economy.addMoney(sellList.get(sellIndex-1).getValue());
-            System.out.println("Sold one power plant (+ " + sellList.get(sellIndex-1).getValue() + " coins)");
+            try {
+                int sellIndex = Integer.parseInt(command.getSecondWord());
+                powerPlants.remove(sellList.get(sellIndex-1));
+                economy.addMoney(sellList.get(sellIndex-1).getValue());
+                System.out.println("Sold one power plant (+ " + sellList.get(sellIndex-1).getValue() + " coins)");
+            } catch(IndexOutOfBoundsException e) {
+                System.out.println("Invalid number. Try again.");
+                System.out.println("Choose an index from 1 to " + sellList.size() + " to sell");
+            }
+
         }
     }
 
@@ -218,17 +224,23 @@ public class Game
             System.out.println(upgradeList.toString());
         } else {
             int upgradeIndex = Integer.parseInt(command.getSecondWord()) - 1;
-            if (economy.getBalance() >= upgradeList.get(upgradeIndex).getUpgradePrice()) {
-                boolean success = upgradeList.get(upgradeIndex).upgrade();
-                if (success) {
-                    economy.removeMoney(upgradeList.get(upgradeIndex).getUpgradePrice());
-                    System.out.println("Upgraded 1 power plant");
+            try {
+                if (economy.getBalance() >= upgradeList.get(upgradeIndex).getUpgradePrice()) {
+                    boolean success = upgradeList.get(upgradeIndex).upgrade();
+                    if (success) {
+                        economy.removeMoney(upgradeList.get(upgradeIndex).getUpgradePrice());
+                        System.out.println("Upgraded 1 power plant");
+                    } else {
+                        System.out.println("The power plant is at max level");
+                    }
                 } else {
-                    System.out.println("The power plant is at max level");
+                    System.out.println("You don't have enough money. Upgrading this power plant costs " + upgradeList.get(upgradeIndex).getUpgradePrice() + " coins");
                 }
-            } else {
-                System.out.println("You don't have enough money. Upgrading this power plant costs " + upgradeList.get(upgradeIndex).getUpgradePrice() + " coins");
+            } catch(IndexOutOfBoundsException e) {
+                System.out.println("Invalid number. Try again.");
+                System.out.println("Choose an index from 1 to " + upgradeList.size() + " to upgrade");
             }
+
         }
     }
 
@@ -248,7 +260,7 @@ public class Game
         }
     }
 
-    public void nextTurn() { //Goes to next turn and updates stats. Checks for lose conditions.
+    public boolean nextTurn() { //Goes to next turn and updates stats. Checks for lose conditions.
         if (currentTurn < MAXTURN) {
             currentTurn++;
             sumTotalProduction();
@@ -256,33 +268,40 @@ public class Game
             energy.checkDifference();
             pollution.setTotalPollution(pollution.getTotalPollution() + pollution.getTurnPollution());
 
-            economy.addMoney(100000);
+            economy.addMoney(100000); //Adds money from taxes
 
             energy.setDemand(energy.getDemand()*1.1);
             if (energy.getDifference() < 0) {
-                economy.removeMoney(Math.abs((long)energy.getDifference()*1000));
+                economy.removeMoney(Math.abs((long)energy.getDifference()*1000), true);
                 System.out.println("You were not producing enough power for the city and lost " + (long)energy.getDifference()*1000 + " coins");
-            } else if (energy.getDifference() > 0) {
+            }
+            else if (energy.getDifference() > 0) {
                 economy.addMoney(Math.abs((long)energy.getDifference()*1000));
                 System.out.println("You are selling power and earned " + (long)energy.getDifference()*1000 + " coins");
             }
 
             if (pollution.getTotalPollution() >= pollution.LIMIT) {
-                finished = true;
-                System.out.println("You polluted too much");
+                 return lose(0);
+                //System.out.println("You polluted too much");
             }
             if (economy.getBalance() < 0) {
-                finished = true;
+                /*finished = true;
                 System.out.println("You are bankrupt.");
+                */
+                return lose(1);
             }
-            if (finished == false) {
+            /*if (!finished) {
                 System.out.println("You earned 100000 coins from taxes.");
                 ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
-            }
-        } else {
-            finished = true;
+            */}
+        else {
+            return win();
         }
+        System.out.println("You earned 100000 coins from taxes.");
+        ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
+        return false;
     }
+
 
     public void show(Command command) {
         if(!command.hasSecondWord()) {
@@ -326,6 +345,19 @@ public class Game
         return currentPowerPlants;
 
     }
+    private boolean lose(int reason) {
+        System.out.println("You lose");
+        String[] reasons = {"You polluted too much."
+                , "You are bankrupt. Current balance :" + economy.getBalance() };
+        System.out.println(reasons[reason]);
+        //ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
+        return quit();
+    }
+    private boolean win() {
+        System.out.println("You win.");
+        //ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
+        return quit();
+    }
 
     private boolean quit(Command command) 
     {
@@ -334,14 +366,11 @@ public class Game
             return false;
         }
         else {
-            return true;
+            return quit();
         }
     }
     private boolean quit() {
-        if (this.finished == true) {
-            return true;
-        } else {
-            return false;
+        System.out.println("Thank you for playing Good bye.");
+        return true;
         }
-    }
 }
