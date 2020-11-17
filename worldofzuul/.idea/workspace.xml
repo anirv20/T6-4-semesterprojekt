@@ -23,15 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40996821-cfb4-4439-936e-c5174dfbd027" name="Default Changelist" comment="lots of stuff">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/Presentation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/CoalPowerPlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/CoalPowerPlant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/CommandWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/CommandWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/NuclearReactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/NuclearReactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Pollution.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Pollution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/PowerPlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/PowerPlant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/WindFarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/WindFarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul.iml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -61,8 +57,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/javafx-sdk-11.0.2/lib" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -71,12 +67,24 @@
     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="worldofzuul.Start" />
       <module name="worldofzuul" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Anton\Desktop\javafx-sdk-11.0.2&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="worldofzuul.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,6 +113,7 @@
       <workItem from="1604316428924" duration="6635000" />
       <workItem from="1604398039521" duration="13235000" />
       <workItem from="1604487920049" duration="5860000" />
+      <workItem from="1605611990100" duration="929000" />
     </task>
     <task id="LOCAL-00001" summary="Tried to delete &quot;Out&quot;">
       <created>1603891056594</created>
@@ -156,6 +165,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="441" y="94" key="#Project_Structure/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1605000580132" />
+    <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605612230996">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1605612230996" />
     <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser" timestamp="1604493331076">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -165,10 +178,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="641" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1605000584300" />
-    <state x="531" y="235" key="FileChooserDialogImpl" timestamp="1603879114588">
+    <state x="531" y="235" key="FileChooserDialogImpl" timestamp="1605612104335">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="531" y="235" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1603879114588" />
+    <state x="531" y="235" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1605612104335" />
     <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1605428824073">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -209,10 +222,11 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state width="2151" height="409" key="GridCell.Tab.1.right/0.0.2194.1194/0.2160.2560.733@0.0.2194.1194" timestamp="1605122954428" />
-    <state x="462" y="165" key="SettingsEditor" timestamp="1605001079485">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="361" y="111" key="SettingsEditor" timestamp="1605612109029">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="462" y="165" key="SettingsEditor/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1605001079485" />
+    <state x="361" y="111" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1605612109029" />
     <state x="343" y="213" key="Vcs.Push.Dialog.v2" timestamp="1604414881885">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
