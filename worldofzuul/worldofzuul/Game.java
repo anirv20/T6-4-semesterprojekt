@@ -18,9 +18,7 @@ public class Game
     private Room cityHall, outside, nuclearReactor, coalPowerPlant, windFarm;
     private int currentTurn = 1;
     private final int MAXTURN = 30;
-    //private boolean finished = false;
 
-    //Constructor of the Game object
     public Game() 
     {
         createRooms();
@@ -77,10 +75,9 @@ public class Game
 
             Command command = parser.getCommand();
 
-            finished = (processCommand(command));  //if (processCommand(command) == true || quit()== true)
+            finished = (processCommand(command));
 
         }
-        //System.out.println("Thank you for playing.  Good bye.");
     }
 
     private void printWelcome()
@@ -290,10 +287,7 @@ public class Game
                 */
                 return lose(1);
             }
-            /*if (!finished) {
-                System.out.println("You earned 100000 coins from taxes.");
-                ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
-            */}
+        }
         else {
             return win();
         }
@@ -345,17 +339,15 @@ public class Game
         return currentPowerPlants;
 
     }
-    private boolean lose(int reason) {
+    private boolean lose(int reason) { //The int value tells for which the player lost to make a relevant output.
         System.out.println("You lose");
         String[] reasons = {"You polluted too much."
                 , "You are bankrupt. Current balance :" + economy.getBalance() };
         System.out.println(reasons[reason]);
-        //ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
         return quit();
     }
-    private boolean win() {
+    private boolean win() { //Takes care of printing af winning message and quits the game.
         System.out.println("You win.");
-        //ui.printStats(currentTurn, MAXTURN, economy, energy, pollution);
         return quit();
     }
 
@@ -369,7 +361,7 @@ public class Game
             return quit();
         }
     }
-    private boolean quit() {
+    private boolean quit() { //The last method being called no matter how the game is ended.
         System.out.println("Thank you for playing Good bye.");
         return true;
         }
