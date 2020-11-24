@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.16)  9 NOV 2020 18:51
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.16)  21 OCT 2020 12:00
+>>>>>>> Stashed changes
 entering extended mode
 **./T6-4-projektrapport.tex
 (T6-4-projektrapport.tex
@@ -208,7 +212,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
 [1
 
+<<<<<<< Updated upstream
 ]
+=======
+>>>>>>> Stashed changes
 Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
  []
@@ -218,7 +225,11 @@ File: images/problemtræ.jpg Graphic file (type jpg)
 <use images/problemtræ.jpg>
 Package pdftex.def Info: images/problemtræ.jpg  used on input line 51.
 (pdftex.def)             Requested size: 390.0pt x 383.66893pt.
+<<<<<<< Updated upstream
 [2] [3 <./images/problemtræ.jpg>]
+=======
+ [2] [3 <./images/problemtræ.jpg>]
+>>>>>>> Stashed changes
 Overfull \hbox (74.37712pt too wide) in paragraph at lines 71--72
 []\OT1/cmr/m/n/12 Hvordan ud-vikles et lringsspil, der in-formerer malgruppen
  om lsningsmulighederne? 
@@ -231,6 +242,7 @@ m udgangspunkt
  []
 
 [4]
+<<<<<<< Updated upstream
 Underfull \hbox (badness 10000) in paragraph at lines 116--116
 []|\OT1/cmr/m/n/12 Implementering af
  []
@@ -520,6 +532,19 @@ File: images/uml_1.png Graphic file (type png)
 Package pdftex.def Info: images/uml_1.png  used on input line 386.
 (pdftex.def)             Requested size: 390.0pt x 279.53604pt.
 [17] [18 <./images/uml_1.png>] (T6-4-projektrapport.bbl [19]
+=======
+Overfull \hbox (0.93909pt too wide) in paragraph at lines 94--95
+\OT1/cmr/m/n/12 I im-ple-menter-ings-fasen benyttes pro-gram-mer-ingsparadig-me
+t ob-jek-to-ri-en-teret
+ []
+
+
+Overfull \hbox (26.19681pt too wide) in paragraph at lines 101--116
+[][] 
+ []
+
+(T6-4-projektrapport.bbl [5]
+>>>>>>> Stashed changes
 Underfull \hbox (badness 10000) in paragraph at lines 11--20
 []\OT1/cmr/m/it/12 Verdensmalene.  \OT1/cmr/m/n/12 (2020, Sep).  FN.  Re-triev
 ed from
@@ -533,6 +558,7 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< Updated upstream
  2433 strings out of 480236
  34963 string characters out of 2876757
  328554 words of memory out of 3000000
@@ -555,6 +581,24 @@ n_mc03yx6/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.p
 fb><C:/Users/anton_mc03yx6/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmtt12.pfb>
 Output written on T6-4-projektrapport.pdf (21 pages, 298253 bytes).
+=======
+ 2387 strings out of 480236
+ 34219 string characters out of 2876757
+ 316384 words of memory out of 3000000
+ 18942 multiletter control sequences out of 15000+200000
+ 541884 words of font info for 52 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 60i,12n,66p,294b,244s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\anton_mc03yx6\AppData\Local\MiKTeX\font
+s/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/anton_mc03yx6/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/anton_mc0
+3yx6/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
+/Users/anton_mc03yx6/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr17.pfb><C:/Users/anton_mc03yx6/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmti12.pfb><C:/Users/anton_mc03yx6/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on T6-4-projektrapport.pdf (7 pages, 154626 bytes).
+>>>>>>> Stashed changes
 PDF statistics:
  121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

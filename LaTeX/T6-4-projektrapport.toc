@@ -9,6 +9,7 @@
 \contentsline {subsection}{\numberline {3.2}Underspørgsmål}{4}{}%
 \contentsline {subsection}{\numberline {3.3}Afgrænsning}{4}{}%
 \contentsline {section}{\numberline {4}Metode}{4}{}%
+<<<<<<< Updated upstream
 \contentsline {subsection}{\numberline {4.1}Analysefasen}{4}{}%
 \contentsline {subsection}{\numberline {4.2}Designfasen}{5}{}%
 \contentsline {subsection}{\numberline {4.3}Implementeringsfasen}{5}{}%
@@ -28,3 +29,10 @@
 \contentsline {subsubsection}{Klassediagram}{18}{}%
 \contentsline {subsection}{\numberline {7.3}Implementeringsfasen}{18}{}%
 \contentsline {chapter}{References}{20}{}%
+=======
+\contentsline {subsection}{\numberline {4.1}Analyse-/designfasen}{4}{}%
+\contentsline {subsection}{\numberline {4.2}Implementeringsfasen}{5}{}%
+\contentsline {subsection}{\numberline {4.3}Testfasen}{5}{}%
+\contentsline {section}{\numberline {5}Tidsplan}{5}{}%
+\contentsline {chapter}{References}{6}{}%
+>>>>>>> Stashed changes
