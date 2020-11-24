@@ -18,8 +18,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" scaleShape="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#movePlayer" prefHeight="600.0" prefWidth="800.0" scaleShape="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzuul.presentationgui.Controller">
    <top>
       <Label text="World of Energy" BorderPane.alignment="CENTER">
          <font>
@@ -30,32 +29,31 @@
    <left>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="542.0" prefWidth="10.0" />
-            <VBox prefHeight="97.0" prefWidth="180.0">
+            <VBox prefHeight="542.0" prefWidth="190.0">
                <children>
                   <Label text="Balance">
                      <font>
                         <Font name="Gadugi" size="20.0" />
                      </font>
                   </Label>
-                  <Label prefWidth="28.0" text="Label" />
+                  <Label id="lblBalance" fx:id="lblBalance" prefWidth="28.0" text="Label" />
                   <Pane prefHeight="20.0" prefWidth="166.0" />
                   <Label prefWidth="79.0" text="Pollution">
                      <font>
                         <Font name="Gadugi" size="20.0" />
                      </font>
                   </Label>
-                  <ProgressBar prefWidth="200.0" progress="0.0" />
+                  <ProgressBar id="pBarPollution" fx:id="pBarPollution" prefWidth="200.0" progress="0.0" />
                   <HBox prefHeight="20.0" prefWidth="100.0">
                      <children>
                         <Label prefHeight="17.0" prefWidth="70.0" text="Per turn:" />
-                        <Label text="Label" />
+                        <Label id="lblTurnPollution" fx:id="lblTurnPollution" text="Label" />
                      </children>
                   </HBox>
                   <HBox prefHeight="20.0" prefWidth="100.0">
                      <children>
                         <Label prefHeight="17.0" prefWidth="70.0" text="Total:" />
-                        <Label text="Label" />
+                        <Label id="lblTotalPollution" fx:id="lblTotalPollution" text="Label" />
                      </children>
                   </HBox>
                   <Pane prefHeight="20.0" prefWidth="166.0" />
@@ -64,23 +62,25 @@
                         <Font name="Gadugi" size="20.0" />
                      </font>
                   </Label>
-                  <ProgressBar prefWidth="200.0" progress="0.0" />
+                  <ProgressBar id="pBarEnergy" fx:id="pBarEnergy" prefWidth="200.0" progress="0.0" />
                   <HBox prefHeight="20.0" prefWidth="100.0">
                      <children>
                         <Label prefHeight="17.0" prefWidth="70.0" text="Per turn:" />
-                        <Label text="Label" />
+                        <Label id="lblTurnEnergy" fx:id="lblTurnEnergy" text="Label" />
                      </children>
                   </HBox>
                   <HBox prefHeight="20.0" prefWidth="100.0">
                      <children>
                         <Label prefHeight="17.0" prefWidth="70.0" text="Demand:" />
-                        <Label text="Label" />
+                        <Label id="lblDemand" fx:id="lblDemand" text="Label" />
                      </children>
                   </HBox>
-                  <ProgressIndicator minHeight="150.0" minWidth="150.0" prefHeight="181.0" prefWidth="177.0" progress="0.0" />
+                  <ProgressIndicator id="pIndTurns" fx:id="pIndTurns" minHeight="150.0" minWidth="150.0" prefHeight="181.0" prefWidth="177.0" progress="0.0" />
                </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
             </VBox>
-            <VBox prefHeight="542.0" prefWidth="10.0" />
          </children>
       </HBox>
    </left>
@@ -89,23 +89,23 @@
          <children>
             <ImageView fitHeight="403.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <image>
-                  <Image url="@images/mock_up_2.png" />
+                  <Image url="@/worldofzuul/images/map_3.png" />
                </image>
             </ImageView>
-            <Circle fill="RED" layoutX="275.0" layoutY="196.0" radius="7.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle id="player" fx:id="player" fill="RED" layoutX="200.0" layoutY="5.0" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
+            <Button id="btnNext" fx:id="btnNext" layoutX="149.0" layoutY="443.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="103.0" style="-fx-border-color: Black;" text="NEXT TURN" />
          </children>
       </AnchorPane>
    </center>
    <right>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="200.0" prefWidth="10.0" />
             <VBox prefHeight="200.0" prefWidth="180.0">
                <children>
                   <AnchorPane prefHeight="51.0" prefWidth="180.0">
                      <children>
                         <Label layoutY="6.0" prefHeight="17.0" prefWidth="119.0" text="Current location:" />
-                        <Label layoutX="14.0" layoutY="18.0" text="Label">
+                        <Label id="lblCurrentLocation" fx:id="lblCurrentLocation" layoutX="14.0" layoutY="18.0" text="Label">
                            <font>
                               <Font name="Gadugi" size="20.0" />
                            </font>
@@ -114,27 +114,27 @@
                   </AnchorPane>
                   <TitledPane animated="false" prefHeight="208.0" prefWidth="180.0" text="Info">
                      <content>
-                        <TextArea editable="false" prefHeight="197.0" prefWidth="178.0" style="-fx-wrap-text: true;" text="Coal power plants are huge structures usually build in industrial districts. They use coal to produce heat, the heat is used to boil water and the steam from the water is used to drive generators. The environmental impact from burning coal is seen in the form of acid rain, smog and of course the devestating amounts of CO2 emissions. They are however consistent in their production of electricity and generate lots of it very cheaply." />
+                        <TextArea id="txtInfo" fx:id="txtInfo" editable="false" prefHeight="197.0" prefWidth="178.0" style="-fx-wrap-text: true;" text="Coal power plants are huge structures usually build in industrial districts. They use coal to produce heat, the heat is used to boil water and the steam from the water is used to drive generators. The environmental impact from burning coal is seen in the form of acid rain, smog and of course the devestating amounts of CO2 emissions. They are however consistent in their production of electricity and generate lots of it very cheaply." />
                      </content>
                   </TitledPane>
                   <TitledPane prefHeight="195.0" prefWidth="180.0" text="PowerPlants">
                      <content>
-                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                        <ListView id="listViewPowerPlants" fx:id="listViewPowerPlants" prefHeight="200.0" prefWidth="200.0" />
                      </content>
                   </TitledPane>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" style="-fx-background-color: #7CFC00; -fx-border-color: black;" text="BUY">
+                        <Button id="btnBuy" fx:id="btnBuy" mnemonicParsing="false" style="-fx-background-color: #7CFC00; -fx-border-color: black;" text="BUY">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" style="-fx-background-color: #DC143C; -fx-border-color: black;" text="SELL" textFill="WHITE">
+                        <Button id="btnSell" fx:id="btnSell" mnemonicParsing="false" style="-fx-background-color: #DC143C; -fx-border-color: black;" text="SELL" textFill="WHITE">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button contentDisplay="CENTER" mnemonicParsing="false" style="-fx-border-color: black;" text="UPGRADE">
+                        <Button id="btnUpgrade" fx:id="btnUpgrade" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-border-color: black;" text="UPGRADE">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
@@ -145,6 +145,9 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="10.0" />
          </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
       </HBox>
    </right>
 </BorderPane>
