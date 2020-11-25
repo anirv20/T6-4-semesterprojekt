@@ -56,10 +56,6 @@ public abstract class PowerPlant {
         this.level = level;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public void setDescription(String description) {
         this.description = description;
     }

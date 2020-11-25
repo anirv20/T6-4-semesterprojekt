@@ -18,6 +18,7 @@ public class Energy {
     }
 
     public double getTotalProduction() {
+
         return totalProduction;
     }
 

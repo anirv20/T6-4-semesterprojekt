@@ -36,7 +36,7 @@
                         <Font name="Gadugi" size="20.0" />
                      </font>
                   </Label>
-                  <Label id="lblBalance" fx:id="lblBalance" prefWidth="28.0" text="Label" />
+                  <Label id="lblBalance" fx:id="lblBalance" prefHeight="17.0" prefWidth="191.0" text="Label" />
                   <Pane prefHeight="20.0" prefWidth="166.0" />
                   <Label prefWidth="79.0" text="Pollution">
                      <font>
@@ -47,13 +47,13 @@
                   <HBox prefHeight="20.0" prefWidth="100.0">
                      <children>
                         <Label prefHeight="17.0" prefWidth="70.0" text="Per turn:" />
-                        <Label id="lblTurnPollution" fx:id="lblTurnPollution" text="Label" />
+                        <Label id="lblTurnPollution" fx:id="lblTurnPollution" prefHeight="17.0" prefWidth="110.0" text="Label" />
                      </children>
                   </HBox>
                   <HBox prefHeight="20.0" prefWidth="100.0">
                      <children>
                         <Label prefHeight="17.0" prefWidth="70.0" text="Total:" />
-                        <Label id="lblTotalPollution" fx:id="lblTotalPollution" text="Label" />
+                        <Label id="lblTotalPollution" fx:id="lblTotalPollution" prefHeight="17.0" prefWidth="110.0" text="Label" />
                      </children>
                   </HBox>
                   <Pane prefHeight="20.0" prefWidth="166.0" />
@@ -66,13 +66,13 @@
                   <HBox prefHeight="20.0" prefWidth="100.0">
                      <children>
                         <Label prefHeight="17.0" prefWidth="70.0" text="Per turn:" />
-                        <Label id="lblTurnEnergy" fx:id="lblTurnEnergy" text="Label" />
+                        <Label id="lblTurnEnergy" fx:id="lblTurnEnergy" prefHeight="17.0" prefWidth="112.0" text="Label" />
                      </children>
                   </HBox>
                   <HBox prefHeight="20.0" prefWidth="100.0">
                      <children>
                         <Label prefHeight="17.0" prefWidth="70.0" text="Demand:" />
-                        <Label id="lblDemand" fx:id="lblDemand" text="Label" />
+                        <Label id="lblDemand" fx:id="lblDemand" prefHeight="17.0" prefWidth="111.0" text="Label" />
                      </children>
                   </HBox>
                   <ProgressIndicator id="pIndTurns" fx:id="pIndTurns" minHeight="150.0" minWidth="150.0" prefHeight="181.0" prefWidth="177.0" progress="0.0" />
@@ -114,7 +114,7 @@
                   </AnchorPane>
                   <TitledPane animated="false" prefHeight="208.0" prefWidth="180.0" text="Info">
                      <content>
-                        <TextArea id="txtInfo" fx:id="txtInfo" editable="false" prefHeight="197.0" prefWidth="178.0" style="-fx-wrap-text: true;" text="Coal power plants are huge structures usually build in industrial districts. They use coal to produce heat, the heat is used to boil water and the steam from the water is used to drive generators. The environmental impact from burning coal is seen in the form of acid rain, smog and of course the devestating amounts of CO2 emissions. They are however consistent in their production of electricity and generate lots of it very cheaply." />
+                        <TextArea id="txtInfo" fx:id="txtInfo" editable="false" focusTraversable="false" prefHeight="197.0" prefWidth="178.0" style="-fx-wrap-text: true;" text="Coal power plants are huge structures usually build in industrial districts. They use coal to produce heat, the heat is used to boil water and the steam from the water is used to drive generators. The environmental impact from burning coal is seen in the form of acid rain, smog and of course the devestating amounts of CO2 emissions. They are however consistent in their production of electricity and generate lots of it very cheaply." />
                      </content>
                   </TitledPane>
                   <TitledPane prefHeight="195.0" prefWidth="180.0" text="PowerPlants">
@@ -124,17 +124,17 @@
                   </TitledPane>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button id="btnBuy" fx:id="btnBuy" mnemonicParsing="false" style="-fx-background-color: #7CFC00; -fx-border-color: black;" text="BUY">
+                        <Button id="btnBuy" fx:id="btnBuy" mnemonicParsing="false" onMouseClicked="#buyPowerPlant" style="-fx-background-color: #7CFC00; -fx-border-color: black;" text="BUY">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button id="btnSell" fx:id="btnSell" mnemonicParsing="false" style="-fx-background-color: #DC143C; -fx-border-color: black;" text="SELL" textFill="WHITE">
+                        <Button id="btnSell" fx:id="btnSell" mnemonicParsing="false" onMouseClicked="#sellPowerPlant" style="-fx-background-color: #DC143C; -fx-border-color: black;" text="SELL" textFill="WHITE">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button id="btnUpgrade" fx:id="btnUpgrade" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-border-color: black;" text="UPGRADE">
+                        <Button id="btnUpgrade" fx:id="btnUpgrade" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#upgradePowerPlant" style="-fx-border-color: black;" text="UPGRADE">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>

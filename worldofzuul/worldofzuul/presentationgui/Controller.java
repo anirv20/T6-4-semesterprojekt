@@ -2,7 +2,6 @@ package worldofzuul.presentationgui;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Circle;
 import worldofzuul.domain.*;
@@ -31,12 +30,14 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        City city = new City();
-        listViewPowerPlants.getItems().addAll(city.getPowerPlants());
+        listViewPowerPlants.setItems(StartGUI.getCity().getPowerPlants());
+        lblCurrentLocation.setText(StartGUI.getCity().getCurrentRoom().toString());
+        txtInfo.setText(StartGUI.getCity().getCurrentRoom().getInfo());
+        updateStats();
     }
 
     @FXML
-    void movePlayer(KeyEvent event) {
+    public void movePlayer(KeyEvent event) {
         switch (event.getCode()) {
             case S:
                 if (player.getCenterY() < 390) {
@@ -57,5 +58,29 @@ public class Controller implements Initializable {
                 player.setCenterX(player.getCenterX() + 5);
                 break;
         }
+        StartGUI.roomChecker(player);
+        lblCurrentLocation.setText(StartGUI.getCity().getCurrentRoom().toString());
+        txtInfo.setText(StartGUI.getCity().getCurrentRoom().getInfo());
+        listViewPowerPlants.setItems(StartGUI.getCity().getCurrentPowerPlants());
+    }
+
+    public void updateStats() {
+        lblDemand.setText(StartGUI.getCity().getEnergy().getDemand() + " MW");
+        lblTotalPollution.setText(StartGUI.getCity().getPollution().getTotalPollution() + " kgCO2e");
+        lblTurnPollution.setText(StartGUI.getCity().getPollution().getTurnPollution() + " kgCO2e/turn");
+        lblBalance.setText(StartGUI.getCity().getEconomy().getBalance() +" coins");
+        lblTurnEnergy.setText(StartGUI.getCity().getEnergy().getTotalProduction() +" MW/turn");
+    }
+    public void buyPowerPlant() {
+        StartGUI.getCity().buyPowerPlant();
+        updateStats();
+    }
+    public void sellPowerPlant() {
+        StartGUI.getCity().sellPowerPlant();
+        updateStats();
+    }
+    public void upgradePowerPlant() {
+        StartGUI.getCity().upgradePowerPlant();
+        updateStats();
     }
 }

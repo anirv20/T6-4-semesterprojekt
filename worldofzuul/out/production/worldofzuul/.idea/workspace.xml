@@ -23,15 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40996821-cfb4-4439-936e-c5174dfbd027" name="Default Changelist" comment="lots of stuff">
-      <change afterPath="$PROJECT_DIR$/worldofzuul/presentationgui/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worldofzuul/presentationgui/Start.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/domain/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/domain/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/presentationcli/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/presentationcli/Start.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Presentation.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/presentationcli/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/presentationcli/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/domain/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/presentationgui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/presentationgui/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/presentationgui/StartGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/presentationgui/StartGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +52,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -109,13 +105,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,7 +144,8 @@
       <workItem from="1604316428924" duration="6635000" />
       <workItem from="1604398039521" duration="13235000" />
       <workItem from="1604487920049" duration="5860000" />
-      <workItem from="1606220156329" duration="1984000" />
+      <workItem from="1606220156329" duration="10334000" />
+      <workItem from="1606300656687" duration="2411000" />
     </task>
     <task id="LOCAL-00001" summary="Tried to delete &quot;Out&quot;">
       <created>1603891056594</created>
@@ -194,10 +193,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="lots of stuff" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser" timestamp="1606222173983">
+    <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606222533294">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1606222173983" />
+    <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1606222533294" />
+    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser" timestamp="1606302722228">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1606302722228" />
     <state x="569" y="168" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1604150401714" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606221008713">
       <screen x="0" y="0" width="1500" height="960" />
@@ -208,22 +211,22 @@
     </state>
     <state x="531" y="235" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1603879114588" />
     <state x="680" y="255" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604952037699" />
-    <state width="1458" height="548" key="GridCell.Tab.0.bottom" timestamp="1606220894643">
+    <state width="1458" height="175" key="GridCell.Tab.0.bottom" timestamp="1606234654648">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="548" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1606220894643" />
-    <state width="1458" height="548" key="GridCell.Tab.0.center" timestamp="1606220894643">
+    <state width="1458" height="175" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1606234654648" />
+    <state width="1458" height="175" key="GridCell.Tab.0.center" timestamp="1606234654648">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="548" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1606220894643" />
-    <state width="1458" height="548" key="GridCell.Tab.0.left" timestamp="1606220894642">
+    <state width="1458" height="175" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1606234654648" />
+    <state width="1458" height="175" key="GridCell.Tab.0.left" timestamp="1606234654648">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="548" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1606220894642" />
-    <state width="1458" height="548" key="GridCell.Tab.0.right" timestamp="1606220894643">
+    <state width="1458" height="175" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1606234654648" />
+    <state width="1458" height="175" key="GridCell.Tab.0.right" timestamp="1606234654648">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="548" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1606220894643" />
+    <state width="1458" height="175" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1606234654648" />
     <state x="343" y="213" key="Vcs.Push.Dialog.v2" timestamp="1604414881885">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -232,9 +235,9 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="175" y="164" key="new project wizard/0.0.1500.960@0.0.1500.960" timestamp="1603879117667" />
-    <state x="416" y="209" width="672" height="678" key="search.everywhere.popup" timestamp="1604406506895">
+    <state x="417" y="210" width="672" height="678" key="search.everywhere.popup" timestamp="1606301601801">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="416" y="209" width="672" height="678" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1604406506895" />
+    <state x="417" y="210" width="672" height="678" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1606301601801" />
   </component>
 </project>

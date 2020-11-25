@@ -7,11 +7,19 @@ import java.util.HashMap;
 public class Room 
 {
     private String description;
+    private String info;
+    private String name;
     private HashMap<String, Room> exits;
 
     public Room(String description)
     {
         this.description = description;
+        this.exits = new HashMap<String, Room>();
+    }
+    public Room(String description, String name)
+    {
+        this.description = description;
+        this.name = name;
         this.exits = new HashMap<String, Room>();
     }
 
@@ -43,6 +51,19 @@ public class Room
     public Room getExit(String direction) 
     {
         return exits.get(direction);
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
 
