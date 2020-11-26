@@ -124,17 +124,17 @@
                   </TitledPane>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button id="btnBuy" fx:id="btnBuy" mnemonicParsing="false" style="-fx-background-color: #7CFC00; -fx-border-color: black;" text="BUY">
+                        <Button id="btnBuy" fx:id="btnBuy" mnemonicParsing="false" onMouseClicked="#buyPowerPlant" style="-fx-background-color: #7CFC00; -fx-border-color: black;" text="BUY">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button id="btnSell" fx:id="btnSell" mnemonicParsing="false" style="-fx-background-color: #DC143C; -fx-border-color: black;" text="SELL" textFill="WHITE">
+                        <Button id="btnSell" fx:id="btnSell" mnemonicParsing="false" onMouseClicked="#sellPowerPlant" style="-fx-background-color: #DC143C; -fx-border-color: black;" text="SELL" textFill="WHITE">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button id="btnUpgrade" fx:id="btnUpgrade" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-border-color: black;" text="UPGRADE">
+                        <Button id="btnUpgrade" fx:id="btnUpgrade" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#upgradePowerPlant" style="-fx-border-color: black;" text="UPGRADE">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>

@@ -248,6 +248,9 @@ public class City
             outside.setInfo("I'm having trouble breathing!");
         }
     }
+    public String numFormat(long num){
+        return String.format(Locale.US,"%,d", num);
+    }
 
     public Room getCurrentRoom() {
         return this.currentRoom;
