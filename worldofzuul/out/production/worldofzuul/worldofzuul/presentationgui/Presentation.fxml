@@ -93,7 +93,7 @@
                </image>
             </ImageView>
             <Circle id="player" fx:id="player" fill="RED" layoutX="200.0" layoutY="5.0" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
-            <Button id="btnNext" fx:id="btnNext" layoutX="149.0" layoutY="443.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="103.0" style="-fx-border-color: Black;" text="NEXT TURN" />
+            <Button id="btnNext" fx:id="btnNext" layoutX="149.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#nextTurn" prefHeight="48.0" prefWidth="103.0" style="-fx-border-color: Black;" text="NEXT TURN" />
          </children>
       </AnchorPane>
    </center>
@@ -124,17 +124,17 @@
                   </TitledPane>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button id="btnBuy" fx:id="btnBuy" mnemonicParsing="false" style="-fx-background-color: #7CFC00; -fx-border-color: black;" text="BUY">
+                        <Button id="btnBuy" fx:id="btnBuy" mnemonicParsing="false" onMouseClicked="#buyPowerPlant" style="-fx-background-color: #7CFC00; -fx-border-color: black;" text="BUY">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button id="btnSell" fx:id="btnSell" mnemonicParsing="false" style="-fx-background-color: #DC143C; -fx-border-color: black;" text="SELL" textFill="WHITE">
+                        <Button id="btnSell" fx:id="btnSell" mnemonicParsing="false" onMouseClicked="#sellPowerPlant" style="-fx-background-color: #DC143C; -fx-border-color: black;" text="SELL" textFill="WHITE">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button id="btnUpgrade" fx:id="btnUpgrade" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-border-color: black;" text="UPGRADE">
+                        <Button id="btnUpgrade" fx:id="btnUpgrade" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#upgradePowerPlant" style="-fx-border-color: black;" text="UPGRADE">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
