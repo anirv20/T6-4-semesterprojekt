@@ -7,6 +7,7 @@ import javafx.scene.shape.Circle;
 import worldofzuul.domain.*;
 
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -68,7 +69,7 @@ public class Controller implements Initializable {
         lblDemand.setText(StartGUI.getCity().getEnergy().getDemand() + " MW");
         lblTotalPollution.setText(StartGUI.getCity().getPollution().getTotalPollution() + " kgCO2e");
         lblTurnPollution.setText(StartGUI.getCity().getPollution().getTurnPollution() + " kgCO2e/turn");
-        lblBalance.setText(StartGUI.getCity().getEconomy().getBalance() +" coins");
+        lblBalance.setText(numFormat(StartGUI.getCity().getEconomy().getBalance()) +" coins");
         lblTurnEnergy.setText(StartGUI.getCity().getEnergy().getTotalProduction() +" MW/turn");
     }
     public void buyPowerPlant() {
@@ -82,5 +83,11 @@ public class Controller implements Initializable {
     public void upgradePowerPlant() {
         StartGUI.getCity().upgradePowerPlant();
         updateStats();
+    }
+    public String numFormat(long num){
+        return String.format(Locale.US,"%,d", num);
+    }
+    public String numFormat(double num){
+        return String.format(Locale.US,"%,d", num);
     }
 }
