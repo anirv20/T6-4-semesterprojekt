@@ -121,8 +121,8 @@ public class City
         //Makes an arraylist of sellable power plants in the room and lets you choose which power plant to sell.
         ObservableList<PowerPlant> sellList = getCurrentPowerPlants();
         try {
-            powerPlants.remove(sellList.get(sellIndex-1));
-            economy.addMoney(sellList.get(sellIndex-1).getValue());
+            powerPlants.remove(sellList.get(sellIndex));
+            economy.addMoney(sellList.get(sellIndex).getValue());
             return true;
         } catch(IndexOutOfBoundsException e) {
             return false;
@@ -195,20 +195,16 @@ public class City
             energy.setDemand(energy.getDemand()*1.1);
 
             if (pollution.getTotalPollution() >= pollution.LIMIT) {
-                 return 1;
-                //System.out.println("You polluted too much");
+                 return 1; //Lost the game because of pollution
             }
             if (economy.getBalance() < 0) {
-                /*finished = true;
-                System.out.println("You are bankrupt.");
-                */
-                return 2;
+                return 2; //Lost the because of a negative balance
             }
         }
         else {
-            return 3;
+            return 3; //Won the game
         }
-        return 0;
+        return 0;//No changes
     }
 
     public ObservableList<PowerPlant> getCurrentPowerPlants() {
