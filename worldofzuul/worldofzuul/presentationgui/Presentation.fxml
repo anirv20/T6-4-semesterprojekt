@@ -93,7 +93,7 @@
                </image>
             </ImageView>
             <Circle id="player" fx:id="player" fill="RED" layoutX="200.0" layoutY="5.0" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
-            <Button id="btnNext" fx:id="btnNext" layoutX="149.0" layoutY="443.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="103.0" style="-fx-border-color: Black;" text="NEXT TURN" />
+            <Button id="btnNext" fx:id="btnNext" layoutX="149.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#nextTurn" prefHeight="48.0" prefWidth="103.0" style="-fx-border-color: Black;" text="NEXT TURN" />
          </children>
       </AnchorPane>
    </center>

@@ -70,17 +70,51 @@ public class Controller implements Initializable {
         lblTurnPollution.setText(StartGUI.getCity().getPollution().getTurnPollution() + " kgCO2e/turn");
         lblBalance.setText(StartGUI.getCity().getEconomy().getBalance() +" coins");
         lblTurnEnergy.setText(StartGUI.getCity().getEnergy().getTotalProduction() +" MW/turn");
+        listViewPowerPlants.setItems(StartGUI.getCity().getCurrentPowerPlants());
     }
+
     public void buyPowerPlant() {
-        StartGUI.getCity().buyPowerPlant();
+        if (StartGUI.getCity().getCurrentRoom().equals(StartGUI.getCity().getCityHall()) || StartGUI.getCity().getCurrentRoom().equals(StartGUI.getCity().getOutside())) {
+            Window.popUp("buy","You are not in the right location to buy a power plant.");
+        } else {
+            int result = StartGUI.getCity().buyPowerPlant();
+            if (result == 0) {
+                Window.popUp("buy","You successfully bought a wind farm for "+ WindFarm.getPrice() +" coins.");
+            } else if (result == 1){
+                Window.popUp("buy","Not enough money. A wind farm costs " + WindFarm.getPrice() + " coins.");
+            } else if (result == 2) {
+                Window.popUp("buy","You successfully bought a nuclear reactor for "+ NuclearReactor.getPrice()+" coins.");
+            } else if (result == 3) {
+                Window.popUp("buy","Not enough money. A nuclear reactor costs " + NuclearReactor.getPrice() + " coins.");
+            } else if (result == 4) {
+                Window.popUp("buy","You successfully bought a coal power plant for " + CoalPowerPlant.getPrice() + " coins");
+            } else if (result == 5) {
+                Window.popUp("buy","Not enough money. A coal power plant costs " + CoalPowerPlant.getPrice() + " coins.");
+            } else {
+                Window.popUp("buy","I don't know what you did to get here.");
+            }
+        }
         updateStats();
     }
     public void sellPowerPlant() {
-        StartGUI.getCity().sellPowerPlant();
+        StartGUI.getCity().sellPowerPlant(listViewPowerPlants.getSelectionModel().getSelectedIndex()+1);
         updateStats();
     }
     public void upgradePowerPlant() {
-        StartGUI.getCity().upgradePowerPlant();
+        int result = StartGUI.getCity().upgradePowerPlant(listViewPowerPlants.getSelectionModel().getSelectedIndex());
+        if (result == 0) {
+            Window.popUp("Upgrade","Upgraded 1 power plant.");
+        } else if (result == 1) {
+            Window.popUp("Upgrade","Can't upgrade. The power plant is at max level.");
+        } else if (result == 2) {
+            Window.popUp("Upgrade", "You don't have enough money. Upgrading this power plant costs " + StartGUI.getCity().getCurrentPowerPlants().get(listViewPowerPlants.getSelectionModel().getSelectedIndex()).getUpgradePrice() + " coins");
+        }
+        updateStats();
+    }
+
+
+    public void nextTurn() {
+        StartGUI.getCity().nextTurn();
         updateStats();
     }
 }

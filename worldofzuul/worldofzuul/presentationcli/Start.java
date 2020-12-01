@@ -54,15 +54,15 @@ public class Start {
                     if (result == 0) {
                         System.out.println("You successfully bought a wind farm for "+ WindFarm.getPrice() +" coins.");
                     } else if (result == 1){
-                        System.out.println("A wind farm costs " + WindFarm.getPrice() + " coins.");
+                        System.out.println("Not enough money. A wind farm costs " + WindFarm.getPrice() + " coins.");
                     } else if (result == 2) {
                         System.out.println("You successfully bought a nuclear reactor for "+ NuclearReactor.getPrice()+" coins.");
                     } else if (result == 3) {
-                        System.out.println("A nuclear reactor costs " + NuclearReactor.getPrice() + " coins.");
+                        System.out.println("Not enough money. A nuclear reactor costs " + NuclearReactor.getPrice() + " coins.");
                     } else if (result == 4) {
                         System.out.println("You successfully bought a coal power plant for " + CoalPowerPlant.getPrice() + " coins");
                     } else if (result == 5) {
-                        System.out.println("A wind farm costs " + CoalPowerPlant.getPrice() + " coins.");
+                        System.out.println("Not enough money. A coal power plant costs " + CoalPowerPlant.getPrice() + " coins.");
                     } else {
                         System.out.println("I don't know what you did to get here.");
                     }
@@ -114,7 +114,7 @@ public class Start {
                     int upgradeIndex = Integer.parseInt(command.getSecondWord()) - 1;
                     int result = city.upgradePowerPlant(upgradeIndex);
                     if (result == 0) {
-                        System.out.println("Upgraded 1 power plant");
+                       System.out.println("Upgraded 1 power plant");
                     } else if (result == 1) {
                         System.out.println("The power plant is at max level");
                     } else if (result == 2) {
