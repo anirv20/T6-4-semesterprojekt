@@ -90,6 +90,8 @@ public class City
                 PowerPlant powerPlant = new WindFarm();
                 powerPlants.add(powerPlant);
                 economy.removeMoney(WindFarm.getPrice());
+                sumTotalProduction();
+                sumTurnPollution();
                 return 0;
             } else {
                 return 1;
@@ -99,6 +101,8 @@ public class City
                 PowerPlant powerPlant = new NuclearReactor();
                 powerPlants.add(powerPlant);
                 economy.removeMoney(NuclearReactor.getPrice());
+                sumTotalProduction();
+                sumTurnPollution();
                 return 2;
             } else {
                 return 3;
@@ -108,6 +112,9 @@ public class City
                 PowerPlant powerPlant = new CoalPowerPlant();
                 powerPlants.add(powerPlant);
                 economy.removeMoney(CoalPowerPlant.getPrice());
+                sumTotalProduction();
+                sumTurnPollution();
+                
                 return 4;
             } else {
                 return 5;
@@ -121,8 +128,10 @@ public class City
         //Makes an arraylist of sellable power plants in the room and lets you choose which power plant to sell.
         ObservableList<PowerPlant> sellList = getCurrentPowerPlants();
         try {
-            powerPlants.remove(sellList.get(sellIndex-1));
-            economy.addMoney(sellList.get(sellIndex-1).getValue());
+            powerPlants.remove(sellList.get(sellIndex));
+            economy.addMoney(sellList.get(sellIndex).getValue());
+            sumTotalProduction();
+            sumTurnPollution();
             return true;
         } catch(IndexOutOfBoundsException e) {
             return false;
@@ -137,6 +146,8 @@ public class City
                 boolean success = upgradeList.get(upgradeIndex).upgrade();
                 if (success) {
                     economy.removeMoney(upgradeList.get(upgradeIndex).getUpgradePrice());
+                    sumTotalProduction();
+                    sumTurnPollution();
                     return 0;
                     //success
                 } else {

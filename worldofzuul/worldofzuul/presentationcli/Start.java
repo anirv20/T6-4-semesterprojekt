@@ -93,7 +93,7 @@ public class Start {
                     System.out.println("Choose an index from 1 to " + sellList.size() + " to sell");
                     System.out.println(sellList.toString());
                 } else {
-                    int sellIndex = Integer.parseInt(command.getSecondWord());
+                    int sellIndex = Integer.parseInt(command.getSecondWord()) - 1;
                     boolean success = city.sellPowerPlant(sellIndex);
                     if (success) {
                         System.out.println("Sold one power plant (+ " + sellList.get(sellIndex - 1).getValue() + " coins)");

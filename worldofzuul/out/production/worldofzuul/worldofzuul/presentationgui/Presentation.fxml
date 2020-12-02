@@ -89,7 +89,7 @@
          <children>
             <ImageView fitHeight="403.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <image>
-                  <Image url="@/worldofzuul/images/map_3.png" />
+                  <Image url="@/worldofzuul/images/map_text.png" />
                </image>
             </ImageView>
             <Circle id="player" fx:id="player" fill="RED" layoutX="200.0" layoutY="5.0" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
