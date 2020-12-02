@@ -6,7 +6,8 @@ import java.util.List;
 
 public class Start {
     public static void main(String[] args) {
-        Game game = new Game();
+        City city = new City();
+        Parser parser = new Parser();
 
         System.out.println("Buy power plants to produce energy.");
         System.out.println("Produce more energy than your city needs.");
@@ -15,21 +16,21 @@ public class Start {
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
         System.out.println("Your command words are:");
-        game.getParser().showCommands();
+        parser.showCommands();
         System.out.println();
-        System.out.println(game.getCurrentRoom().getLongDescription());
+        System.out.println(city.getCurrentRoom().getLongDescription());
         System.out.println();
 
-        printStats(game);
+        printStats(city);
 
         int finished = 0;
 
         while (finished == 0) {
-            game.sumTotalProduction();
-            game.sumTurnPollution();
-            game.getEnergy().checkDifference();
+            city.sumTotalProduction();
+            city.sumTurnPollution();
+            city.getEnergy().checkDifference();
 
-            Command command = game.getParser().getCommand();
+            Command command = parser.getCommand();
 
             CommandWord commandWord = command.getCommandWord();
 
@@ -37,31 +38,31 @@ public class Start {
                 System.out.println("I don't know what you mean...");
             }
             else if (commandWord == CommandWord.HELP) {
-                printHelp(game);
+                printHelp(city, parser);
             }
             else if (commandWord == CommandWord.GO) {
-                goRoom(command, game);
+                goRoom(command, city);
             }
             else if (commandWord == CommandWord.QUIT) {
                 finished = 4;
             }
             else if (commandWord == CommandWord.BUY) {
-                if (game.getCurrentRoom().equals(game.getCityHall()) || game.getCurrentRoom().equals(game.getOutside())) {
+                if (city.getCurrentRoom().equals(city.getCityHall()) || city.getCurrentRoom().equals(city.getOutside())) {
                     System.out.println("You are not in the right location to buy a power plant.");
                 } else {
-                    int result = game.buyPowerPlant();
+                    int result = city.buyPowerPlant();
                     if (result == 0) {
                         System.out.println("You successfully bought a wind farm for "+ WindFarm.getPrice() +" coins.");
                     } else if (result == 1){
-                        System.out.println("A wind farm costs " + WindFarm.getPrice() + " coins.");
+                        System.out.println("Not enough money. A wind farm costs " + WindFarm.getPrice() + " coins.");
                     } else if (result == 2) {
                         System.out.println("You successfully bought a nuclear reactor for "+ NuclearReactor.getPrice()+" coins.");
                     } else if (result == 3) {
-                        System.out.println("A nuclear reactor costs " + NuclearReactor.getPrice() + " coins.");
+                        System.out.println("Not enough money. A nuclear reactor costs " + NuclearReactor.getPrice() + " coins.");
                     } else if (result == 4) {
                         System.out.println("You successfully bought a coal power plant for " + CoalPowerPlant.getPrice() + " coins");
                     } else if (result == 5) {
-                        System.out.println("A wind farm costs " + CoalPowerPlant.getPrice() + " coins.");
+                        System.out.println("Not enough money. A coal power plant costs " + CoalPowerPlant.getPrice() + " coins.");
                     } else {
                         System.out.println("I don't know what you did to get here.");
                     }
@@ -69,32 +70,32 @@ public class Start {
 
             }
             else if (commandWord == CommandWord.SHOW) {
-                show(command, game);
+                show(command, city);
             }
             else if (commandWord == CommandWord.NEXT) {
-                int soldEnergy = game.sellEnergy();
+                int soldEnergy = city.sellEnergy();
                 if (soldEnergy == 0) {
-                    System.out.println("You were not producing enough power for the city and lost " + (long)game.getEnergy().getDifference()*1000 + " coins");
+                    System.out.println("You were not producing enough power for the city and lost " + (long) city.getEnergy().getDifference()*1000 + " coins");
                 } else if (soldEnergy == 1) {
-                    System.out.println("You are selling power and earned " + (long)game.getEnergy().getDifference()*1000 + " coins");
+                    System.out.println("You are selling power and earned " + (long) city.getEnergy().getDifference()*1000 + " coins");
                 } else {
                     System.out.println("You produced just enough electricity.");
                 }
-                finished = game.nextTurn();
+                finished = city.nextTurn();
                 System.out.println("You earned 100,000 coins from taxes.");
-                printStats(game);
+                printStats(city);
             }
             else if (commandWord == CommandWord.SELL) {
-                List<PowerPlant> sellList = game.getCurrentPowerPlants();
+                List<PowerPlant> sellList = city.getCurrentPowerPlants();
                 if (sellList.size() == 0) {
                     System.out.println("You don't have any PowerPlants to sell here");
                 } else if (!command.hasSecondWord()) {
                     System.out.println("Choose an index from 1 to " + sellList.size() + " to sell");
                     System.out.println(sellList.toString());
                 } else {
-                    int sellIndex = Integer.parseInt(command.getSecondWord());
-                    boolean success = game.sellPowerPlant(sellIndex);
-                    if (success == true) {
+                    int sellIndex = Integer.parseInt(command.getSecondWord()) - 1;
+                    boolean success = city.sellPowerPlant(sellIndex);
+                    if (success) {
                         System.out.println("Sold one power plant (+ " + sellList.get(sellIndex - 1).getValue() + " coins)");
                     } else {
                         System.out.println("Invalid number. Try again.");
@@ -103,7 +104,7 @@ public class Start {
                 }
             }
             else if (commandWord == CommandWord.UPGRADE) {
-                List<PowerPlant> upgradeList = game.getCurrentPowerPlants();
+                List<PowerPlant> upgradeList = city.getCurrentPowerPlants();
                 if (upgradeList.size() == 0) {
                     System.out.println("You don't have any PowerPlants to upgrade here");
                 } else if (!command.hasSecondWord()) {
@@ -111,9 +112,9 @@ public class Start {
                     System.out.println(upgradeList.toString());
                 } else {
                     int upgradeIndex = Integer.parseInt(command.getSecondWord()) - 1;
-                    int result = game.upgradePowerPlant(upgradeIndex);
+                    int result = city.upgradePowerPlant(upgradeIndex);
                     if (result == 0) {
-                        System.out.println("Upgraded 1 power plant");
+                       System.out.println("Upgraded 1 power plant");
                     } else if (result == 1) {
                         System.out.println("The power plant is at max level");
                     } else if (result == 2) {
@@ -137,7 +138,7 @@ public class Start {
         }
     }
 
-    private static void goRoom(Command command, Game game)
+    private static void goRoom(Command command, City city)
     {
         if(!command.hasSecondWord()) {
             System.out.println("Go where?");
@@ -146,49 +147,49 @@ public class Start {
 
         String direction = command.getSecondWord();
 
-        Room nextRoom = game.getCurrentRoom().getExit(direction);
+        Room nextRoom = city.getCurrentRoom().getExit(direction);
 
         if (nextRoom == null) {
             System.out.println("There is no door!");
         }
         else {
-            game.setCurrentRoom(nextRoom);
-            System.out.println(game.getCurrentRoom().getLongDescription());
-            if (game.getCurrentPowerPlants().size() > 0) {
-                System.out.println(game.getCurrentPowerPlants().toString());
+            city.setCurrentRoom(nextRoom);
+            System.out.println(city.getCurrentRoom().getLongDescription());
+            if (city.getCurrentPowerPlants().size() > 0) {
+                System.out.println(city.getCurrentPowerPlants().toString());
             }
         }
     }
 
-    private static void printStats(Game game) {
+    private static void printStats(City city) {
         System.out.println("-CITY STATS-");
-        System.out.println("Current turn: " + game.getCurrentTurn() + "/" + game.getMAXTURN());
-        System.out.println("Current balance: " + game.getEconomy().getBalance() + " coins.");
-        System.out.printf("Current energy production/demand: %.2f MW / %.2f MW %n", game.getEnergy().getTotalProduction(), game.getEnergy().getDemand());
-        System.out.println("Current pollution/turn: " + game.getPollution().getTurnPollution() + " kgCO2e/turn");
-        System.out.printf("Total pollution: %.2f / %.2f kgCO2e (%.2f%%)%n", game.getPollution().getTotalPollution(), game.getPollution().getLimit(), game.getPollution().getPollutionPercent());
+        System.out.println("Current turn: " + city.getCurrentTurn() + "/" + city.getMAXTURN());
+        System.out.println("Current balance: " + city.getEconomy().getBalance() + " coins.");
+        System.out.printf("Current energy production/demand: %.2f MW / %.2f MW %n", city.getEnergy().getTotalProduction(), city.getEnergy().getDemand());
+        System.out.println("Current pollution/turn: " + city.getPollution().getTurnPollution() + " kgCO2e/turn");
+        System.out.printf("Total pollution: %.2f / %.2f kgCO2e (%.2f%%)%n", city.getPollution().getTotalPollution(), city.getPollution().getLimit(), city.getPollution().getPollutionPercent());
     }
 
-    private static void printHelp(Game game)
+    private static void printHelp(City city, Parser parser)
     {
         System.out.println("Your command words are:");
-        game.getParser().showCommands();
+        parser.showCommands();
         System.out.println();
-        System.out.println(game.getCurrentRoom().getLongDescription());
+        System.out.println(city.getCurrentRoom().getLongDescription());
         System.out.println();
     }
 
-    public static void show(Command command, Game game) {
+    public static void show(Command command, City city) {
         if(!command.hasSecondWord()) {
-            System.out.println("Show \"power-plants\" or \"balance\"?");
+            System.out.println("Show \"power-plants\", \"stats\" or \"balance\"?");
             return;
         }
         if (command.getSecondWord().equals("power-plants")) {
-            System.out.println(game.getPowerPlants().toString());
+            System.out.println(city.getPowerPlants().toString());
         } else if (command.getSecondWord().equals("balance")) {
-            System.out.println(game.getEconomy().getBalance());
+            System.out.println(city.getEconomy().getBalance());
         } else if (command.getSecondWord().equals("stats")) {
-            printStats(game);
+            printStats(city);
         } else {
             System.out.println("I don't understand");
         }

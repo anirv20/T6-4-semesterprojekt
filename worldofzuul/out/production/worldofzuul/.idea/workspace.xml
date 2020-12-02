@@ -24,21 +24,21 @@
   <component name="ChangeListManager">
     <list default="true" id="40996821-cfb4-4439-936e-c5174dfbd027" name="Default Changelist" comment="lots of stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/CoalPowerPlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/CoalPowerPlant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/presentationcli/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/CommandWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/presentationcli/CommandWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/CommandWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/presentationcli/CommandWords.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Economy.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/Economy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Energy.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/Energy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/NuclearReactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/NuclearReactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/presentationcli/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Pollution.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/Pollution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/PowerPlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/PowerPlant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/presentationcli/Start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/UserInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/WindFarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/WindFarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/domain/City.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/domain/City.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/domain/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/domain/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/presentationcli/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/presentationcli/Start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/presentationgui/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/presentationgui/Controller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/presentationgui/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/presentationgui/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/presentationgui/StartGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/presentationgui/StartGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/domain/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/domain/Energy.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/Energy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/domain/PowerPlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/PowerPlant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/domain/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/presentationcli/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/presentationcli/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/presentationgui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/presentationgui/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/presentationgui/Presentation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/presentationgui/Presentation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/presentationgui/StartGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/presentationgui/StartGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -65,27 +64,53 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/javafx-sdk-11.0.2/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Program Files/SceneBuilder/SceneBuilder.exe" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="org.intellij.sdk.settings.AppSettingsConfigurable" />
   </component>
-  <component name="RunManager">
-    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anton\Documents\GitHub\T6-4-semesterprojekt\worldofzuul\worldofzuul\presentationgui" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.StartGUI">
+    <configuration name="Start (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="worldofzuul.presentationcli.Start" />
       <module name="worldofzuul" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Anton\Desktop\javafx-sdk-11.0.2&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="worldofzuul.domain.*" />
+          <option name="PATTERN" value="worldofzuul.presentationcli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="worldofzuul.Start" />
+      <module name="worldofzuul" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="worldofzuul.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartGUI" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="worldofzuul.presentationgui.StartGUI" />
+      <module name="worldofzuul" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Mikkel\Documents\Git\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,6 +128,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StartGUI" />
+        <item itemvalue="Application.Start (1)" />
         <item itemvalue="Application.Start" />
       </list>
     </recent_temporary>
@@ -125,8 +152,8 @@
       <workItem from="1604316428924" duration="6635000" />
       <workItem from="1604398039521" duration="13235000" />
       <workItem from="1604487920049" duration="5860000" />
-      <workItem from="1605611990100" duration="929000" />
-      <workItem from="1606124187477" duration="7577000" />
+      <workItem from="1606220156329" duration="10334000" />
+      <workItem from="1606300656687" duration="8416000" />
     </task>
     <task id="LOCAL-00001" summary="Tried to delete &quot;Out&quot;">
       <created>1603891056594</created>
@@ -174,89 +201,94 @@
     <option name="LAST_COMMIT_MESSAGE" value="lots of stuff" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="441" y="94" key="#Project_Structure" timestamp="1605000580132">
+    <state x="440" y="94" key="#Project_Structure" timestamp="1606383034470">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="441" y="94" key="#Project_Structure/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1605000580132" />
-    <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605612230996">
+    <state x="440" y="94" key="#Project_Structure/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1606383034470" />
+    <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606222533294">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1605612230996" />
-    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser" timestamp="1606127361377">
+    <state x="206" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1606222533294" />
+    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser" timestamp="1606305372396">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1606127361377" />
+    <state x="556" y="196" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1606305372396" />
     <state x="569" y="168" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1604150401714" />
-    <state x="641" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1605000584300">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="641" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1605000584300" />
-    <state x="531" y="235" key="FileChooserDialogImpl" timestamp="1605612104335">
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606221008713">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="531" y="235" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1605612104335" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1605428824073">
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1500.960@0.0.1500.960" timestamp="1606221008713" />
+    <state x="680" y="255" key="FileChooserDialogImpl" timestamp="1606383548872">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1605428824073" />
-    <state width="1458" height="521" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1604493647389" />
-    <state width="2151" height="349" key="GridCell.Tab.0.bottom/0.0.2194.1194/0.2160.2560.733@0.0.2194.1194" timestamp="1605180147705" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1605428824073">
+    <state x="680" y="255" key="FileChooserDialogImpl/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1606383548872" />
+    <state x="531" y="235" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1603879114588" />
+    <state x="680" y="255" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604952037699" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1606387910653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1605428824073" />
-    <state width="1458" height="521" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1604493647389" />
-    <state width="2151" height="349" key="GridCell.Tab.0.center/0.0.2194.1194/0.2160.2560.733@0.0.2194.1194" timestamp="1605180147705" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1605428824073">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1606387910653" />
+    <state width="1458" height="316" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1606309117268" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1606387910653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1605428824073" />
-    <state width="1458" height="521" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1604493647389" />
-    <state width="2151" height="349" key="GridCell.Tab.0.left/0.0.2194.1194/0.2160.2560.733@0.0.2194.1194" timestamp="1605180147705" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1605428824073">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1606387910653" />
+    <state width="1458" height="316" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1606309117268" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1606387910653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1605428824073" />
-    <state width="1458" height="521" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1604493647389" />
-    <state width="2151" height="349" key="GridCell.Tab.0.right/0.0.2194.1194/0.2160.2560.733@0.0.2194.1194" timestamp="1605180147705" />
-    <state width="2151" height="409" key="GridCell.Tab.1.bottom" timestamp="1605122954428">
-      <screen x="0" y="0" width="2194" height="1194" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1606387910653" />
+    <state width="1458" height="316" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1606309117268" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1606387910653">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="2151" height="409" key="GridCell.Tab.1.bottom/0.0.2194.1194/0.2160.2560.733@0.0.2194.1194" timestamp="1605122954428" />
-    <state width="2151" height="409" key="GridCell.Tab.1.center" timestamp="1605122954428">
-      <screen x="0" y="0" width="2194" height="1194" />
-    </state>
-    <state width="2151" height="409" key="GridCell.Tab.1.center/0.0.2194.1194/0.2160.2560.733@0.0.2194.1194" timestamp="1605122954428" />
-    <state width="2151" height="409" key="GridCell.Tab.1.left" timestamp="1605122954428">
-      <screen x="0" y="0" width="2194" height="1194" />
-    </state>
-    <state width="2151" height="409" key="GridCell.Tab.1.left/0.0.2194.1194/0.2160.2560.733@0.0.2194.1194" timestamp="1605122954428" />
-    <state width="2151" height="409" key="GridCell.Tab.1.right" timestamp="1605122954428">
-      <screen x="0" y="0" width="2194" height="1194" />
-    </state>
-    <state width="2151" height="409" key="GridCell.Tab.1.right/0.0.2194.1194/0.2160.2560.733@0.0.2194.1194" timestamp="1605122954428" />
-    <state x="361" y="111" key="SettingsEditor" timestamp="1605612109029">
+    <state width="1877" height="281" key="GridCell.Tab.0.right/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1606387910653" />
+    <state width="1458" height="316" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1606309117268" />
+    <state width="1458" height="316" key="GridCell.Tab.1.bottom" timestamp="1606309117269">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="462" y="165" key="SettingsEditor/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1605001079485" />
-    <state x="361" y="111" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1605612109029" />
+    <state width="1458" height="316" key="GridCell.Tab.1.bottom/0.0.1500.960@0.0.1500.960" timestamp="1606309117269" />
+    <state width="1458" height="316" key="GridCell.Tab.1.center" timestamp="1606309117268">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="316" key="GridCell.Tab.1.center/0.0.1500.960@0.0.1500.960" timestamp="1606309117268" />
+    <state width="1458" height="316" key="GridCell.Tab.1.left" timestamp="1606309117268">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="316" key="GridCell.Tab.1.left/0.0.1500.960@0.0.1500.960" timestamp="1606309117268" />
+    <state width="1458" height="316" key="GridCell.Tab.1.right" timestamp="1606309117269">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="316" key="GridCell.Tab.1.right/0.0.1500.960@0.0.1500.960" timestamp="1606309117269" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1606382996655">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/-1680.24.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1606382996655" />
     <state x="343" y="213" key="Vcs.Push.Dialog.v2" timestamp="1604414881885">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="343" y="213" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1604414881885" />
-    <state x="256" y="204" key="new project wizard" timestamp="1605267606908">
-      <screen x="0" y="0" width="2194" height="1194" />
+    <state x="303" y="216" width="893" height="627" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1606303599608">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="303" y="216" width="893" height="627" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1500.960@0.0.1500.960" timestamp="1606303599608" />
+    <state x="175" y="164" key="new project wizard" timestamp="1603879117667">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="175" y="164" key="new project wizard/0.0.1500.960@0.0.1500.960" timestamp="1603879117667" />
-    <state x="256" y="204" key="new project wizard/0.0.2194.1194/0.2160.2560.733@0.0.2194.1194" timestamp="1605267606908" />
-    <state x="754" y="279" key="run.anything.popup" timestamp="1605112000460">
-      <screen x="0" y="0" width="2194" height="1194" />
+    <state x="419" y="212" width="672" height="678" key="search.everywhere.popup" timestamp="1606307805300">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="754" y="279" key="run.anything.popup/0.0.2194.1194/0.2160.2560.733@0.0.2194.1194" timestamp="1605112000460" />
-    <state x="608" y="260" width="983" height="844" key="search.everywhere.popup" timestamp="1605120609748">
-      <screen x="0" y="0" width="2194" height="1194" />
-    </state>
-    <state x="416" y="209" width="672" height="678" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1604406506895" />
-    <state x="608" y="260" width="983" height="844" key="search.everywhere.popup/0.0.2194.1194/0.2160.2560.733@0.0.2194.1194" timestamp="1605120609748" />
+    <state x="419" y="212" width="672" height="678" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1606307805300" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
