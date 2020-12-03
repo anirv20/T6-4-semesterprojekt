@@ -124,6 +124,7 @@ public class Controller implements Initializable {
 
     public void nextTurn() {
         int outcome = StartGUI.getCity().nextTurn();
+        updateStats();
 
         if (outcome != 0) {
             if (outcome == 1) {
@@ -135,8 +136,27 @@ public class Controller implements Initializable {
             }
             Stage stage = (Stage) btnNext.getScene().getWindow();
             stage.hide();
+        } else {
+            int event = StartGUI.getCity().eventManager();
+            if (event == 0) {
+                Window.popUp("Event", "There has been violent protests around the new nuclear reactor in town. The police had to get involved, and it cost you 250,000 coins.");
+            } else if (event == 1) {
+                Window.popUp("Event", "The International Atomic Energy Agency is pushing for more nuclear reactors. You have received 500,000 from the UN as an incentive.");
+            } else if (event == 10) {
+                Window.popUp("Event", "There has been a fire at a coal power plant. You had to put out the fire and rebuild the power plant. Total cost: 600,000 coins");
+            } else if (event == 11) {
+                Window.popUp("Event", "The organization for advancement of technology, IEEE, has awarded your city a price of 250,000 coins for not having any coal power plants in your city.");
+            } else if (event == 20) {
+                Window.popUp("Event", "There is not enough wind today, for your wind turbines to produce any energy.");
+            } else if (event == 21) {
+                Window.popUp("Event", "There has been advancements in the wind technology. Wind farms are now permanently 250,000 coins cheaper.");
+            } else if (event == 30) {
+                Window.popUp("Event","Global warming has made the climate warmer. The citizens now use more electricity on air condition. The energy demand has increased by 10%.");
+            } else if (event == 40) {
+                Window.popUp("Event", "Your city's electricity infrastructure has been upgraded. All power plants are now 10% more energy efficient.");
+            }
+            updateStats();
         }
-        updateStats();
     }
 
     public String numFormat(long num) {

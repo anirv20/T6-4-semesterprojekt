@@ -7,13 +7,22 @@ public abstract class PowerPlant {
     private long upgradePrice;
     private int level = 1;
     public static final int MAXLEVEL = 3;
+    private static double bonus = 1;
     private String description;
 
     public PowerPlant(double pollution, double energyProduction, long value) {
         this.pollution = pollution;
-        this.energyProduction = energyProduction;
+        this.energyProduction = energyProduction * bonus;
         this.value = (long)(value*0.5);
         this.upgradePrice = (long)(this.value*0.5);
+    }
+
+    public static void setBonus(double newBonus) {
+        bonus = newBonus;
+    }
+
+    public static double getBonus() {
+        return bonus;
     }
 
     public long getUpgradePrice() {
