@@ -130,7 +130,16 @@ public class Controller implements Initializable {
 
     public void nextTurn() {
         int outcome = StartGUI.getCity().nextTurn();
+        int soldEnergy = StartGUI.getCity().sellEnergy();
         updateStats();
+
+        if (soldEnergy == 0) {
+            Window.popUp("Turn " + StartGUI.getCity().getCurrentTurn() + "/"+StartGUI.getCity().getMAXTURN(), "You were not producing enough power for the city and lost " + numFormat((long) StartGUI.getCity().getEnergy().getDifference()*1000) + " coins");
+        } else if (soldEnergy == 1) {
+            Window.popUp("Turn " + StartGUI.getCity().getCurrentTurn()+ "/"+StartGUI.getCity().getMAXTURN(), "You are selling power and earned " + numFormat((long) StartGUI.getCity().getEnergy().getDifference()*1000) + " coins");
+        } else {
+            Window.popUp("Turn " + StartGUI.getCity().getCurrentTurn()+ "/"+StartGUI.getCity().getMAXTURN(), "You produced just enough electricity.");
+        }
 
         if (outcome != 0) {
             if (outcome == 1) {
