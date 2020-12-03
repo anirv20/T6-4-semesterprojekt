@@ -4,9 +4,9 @@ public class WindFarm extends PowerPlant {
     private static long price = 1240000;
 
     public WindFarm() {
-        super(4400, 400, price);
+        super(4, 400, price);
         setDescription("This is a wind farm consisting of 100 wind turbines. A wind farm costs " + getPrice() +
-                " coins and produces " + getEnergyProduction() + " MW. The pollution is " + getPollution() + " kgCO2e/turn");
+                " coins and produces " + getEnergyProduction() + " MW. The pollution is " + getPollution() + " tonCO2e/turn");
     }
     public static long getPrice() {
         return price;

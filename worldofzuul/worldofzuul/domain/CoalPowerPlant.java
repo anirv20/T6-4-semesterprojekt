@@ -4,9 +4,9 @@ public class CoalPowerPlant extends PowerPlant {
     private static long price = 450000;
 
     public CoalPowerPlant() {
-        super(492000, 600, price);
+        super(492, 600, price);
         setDescription("This is a coal power plant. A coal power plant costs " + getPrice() + " coins " +
-                "and produces " + getEnergyProduction() + " MW. The pollution is " + getPollution() + " kgCO2e/turn");
+                "and produces " + getEnergyProduction() + " MW. The pollution is " + getPollution() + " tonCO2e/turn");
     }
 
     public static long getPrice() {
