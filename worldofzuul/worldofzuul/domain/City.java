@@ -32,12 +32,12 @@ public class City
     {
         outside = new Room("outside the main entrance of the City Hall", "Outside");
         cityHall = new Room("in the City Hall", "City Hall");
-        nuclearReactor = new Room("at the nuclear power plant. A nuclear reactor costs 3100000 coins " +
-                "and produces 1000 MW. The pollution is 12000 kgCO2e/turn", "Nuclear Reactor");
-        coalPowerPlant = new Room("at the coal power plant. A coal power plant costs 450000 coins " +
-                "and produces 600 MW. The pollution is 492000 kgCO2e/turn", "Coal Power Plant");
-        windFarm = new Room("at the wind farms. A wind farm consists of 100 wind turbines, costs 1240000 coins " +
-                "and produces 400 MW. The pollution is 4400 kgCO2e/turn", "Wind Farm");
+        nuclearReactor = new Room("at the nuclear power plant. A nuclear reactor costs 3,100,000 coins " +
+                "and produces 1000 MW. The pollution is 12 tonCO2e/turn", "Nuclear Reactor");
+        coalPowerPlant = new Room("at the coal power plant. A coal power plant costs 450,000 coins " +
+                "and produces 600 MW. The pollution is 492 tonCO2e/turn", "Coal Power Plant");
+        windFarm = new Room("at the wind farms. A wind farm consists of 100 wind turbines, costs 1,240,000 coins " +
+                "and produces 400 MW. The pollution is 4 tonCO2e/turn", "Wind Farm");
         
         cityHall.setExit("outside", outside);
         cityHall.setInfo("Buy power plants to produce enough energy for the city. " +
@@ -53,7 +53,7 @@ public class City
 
         coalPowerPlant.setExit("outside", outside);
         coalPowerPlant.setInfo("This is a coal power plant. A coal power plant costs 450000 coins " +
-                "and produces 600 MW. The pollution is 492,000 kgCO2e/turn \n" +
+                "and produces 600 MW. The pollution is 492 tonCO2e/turn \n" +
                 "Coal power plants are huge structures usually build in industrial districts. " +
                 "They use coal to produce heat, the heat is used to boil water and the steam from " +
                 "the water is used to drive generators. The environmental impact from burning coal " +
@@ -63,7 +63,7 @@ public class City
 
         nuclearReactor.setExit("outside", outside);
         nuclearReactor.setInfo("This is a nuclear reactor. A nuclear reactor costs 3,100,000 coins " +
-                "and produces 6,100 MW. The pollution is 12,000 kgCO2e/turn \n" +
+                "and produces 6,100 MW. The pollution is 12 tonCO2e/turn \n" +
                 "Nuclear power plants split tiny atoms to produce heat. This creates some amount of radiation, " +
                 "that for the most part can be contained within the reactor itself. The heat is used to boil water " +
                 "and the steam from the water is used to drive generators. They are usually perceived as dangerous, " +
@@ -73,7 +73,7 @@ public class City
 
         windFarm.setExit("outside", outside);
         windFarm.setInfo("This is a wind farm consisting of 100 wind turbines. A wind farm costs 1,240,000 coins " +
-                "and produces 400 MW. The pollution is 4,400 kgCO2e/turn \n" +
+                "and produces 400 MW. The pollution is 4 tonCO2e/turn \n" +
                 "Wind farms consist of 100 wind turbines placed on either land or in the ocean. " +
                 "When the wind hits the giant blades, the wind turbine drives a generator that creates " +
                 "electricity. On the ocean these wind turbines can be several hundred meters tall. Because " +

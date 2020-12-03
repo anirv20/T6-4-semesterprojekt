@@ -1,7 +1,7 @@
 package worldofzuul.domain;
 
 public class Pollution {
-    public final double LIMIT = 5000000;
+    public final double LIMIT = 5000;
     private double totalPollution;
     private double turnPollution;
     
