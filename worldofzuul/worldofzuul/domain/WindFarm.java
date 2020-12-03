@@ -12,6 +12,10 @@ public class WindFarm extends PowerPlant {
         return price;
     }
 
+    public static void setPrice(long price) {
+        WindFarm.price = price;
+    }
+
     @Override
     public boolean upgrade() { // Changes the power plant's values when you upgrade.
         if (getLevel() < PowerPlant.MAXLEVEL) {
