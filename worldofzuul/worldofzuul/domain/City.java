@@ -222,6 +222,94 @@ public class City
         return 0;
     }
 
+    public int eventManager() {
+        if (currentTurn > 4) {
+            int eventHappens = (int)(Math.random() * 10);
+            if (eventHappens >= 7) {
+                int whichEvent = (int)(Math.random()*10);
+
+                if (whichEvent == 0){
+                    boolean hasNuclear = false;
+                    for (PowerPlant p : powerPlants) {
+                        if (p instanceof NuclearReactor) {
+                            hasNuclear = true;
+                            break;
+                        }
+                    }
+                    if (hasNuclear) {
+                        economy.removeMoney(250000, true);
+                        return 0;
+                        // "There has been violent protests around the new nuclear reactor in town.
+                        // The police had to get involved, and it cost you 250,000 coins."
+                    } else {
+                        economy.addMoney(500000);
+                        return 1;
+                        // "The International Atomic Energy Agency is pushing for more nuclear reactors.
+                        // You have received 500,000 from the UN as an incentive."
+                    }
+                }
+                else if (whichEvent == 1) {
+                    boolean hasCoal = false;
+                    for (PowerPlant p : powerPlants) {
+                        if (p instanceof CoalPowerPlant) {
+                            hasCoal = true;
+                            break;
+                        }
+                    }
+                    if (hasCoal) {
+                        economy.removeMoney(600000, true);
+                        return 10;
+
+                        // "There has been a fire at a coal power plant.
+                        // You had to put out the fire and rebuild the power plant. Total cost: 600,000 coins"
+                    } else {
+                        economy.addMoney(250000);
+                        return 11;
+                        // "The organization for advancement of technology, IEEE, has awarded your city a price of
+                        // 250000 coins for not having any coal power plants in your city."
+                    }
+                } else if (whichEvent == 2) {
+                    int windFarmsAmount = 0;
+                    double windEnergy = 0;
+                    for (PowerPlant p : powerPlants) {
+                        if (p instanceof WindFarm) {
+                            windFarmsAmount++;
+                            windEnergy += p.getEnergyProduction();
+                        }
+                    }
+                    if (windFarmsAmount != 0) {
+                        energy.setTotalProduction(energy.getTotalProduction()-windEnergy);
+                        return 20;
+                        //"There is not enough wind today, for your wind turbines to produce any energy."
+                    } else {
+                        WindFarm.setPrice(WindFarm.getPrice()-250000);
+                        //"There has been advancements in the wind technology. Wind farms are now permanently 250,000 coins cheaper."
+                        return 21;
+                    }
+                } else if (whichEvent == 3) {
+                    energy.setDemand(energy.getDemand()*1.1);
+                    return 30;
+                    //"Global warming has made the climate warmer. The citizens now use more electricity on air condition.
+                    //The energy demand has increased by 10%"
+                } else if (whichEvent == 4) {
+                    PowerPlant.setBonus(PowerPlant.getBonus()+0.1);
+                    for (PowerPlant p : powerPlants) {
+                        p.setEnergyProduction(p.getEnergyProduction()*1.1);
+                    }
+                    //"Your city's electricity infrastructure has been upgraded.
+                    //All power plants are now 10% more energy efficient."
+                    return 40;
+                } else {
+                    return 100;
+                }
+            } else {
+                return 100;
+            }
+        }
+        return 100;
+        //No event
+    }
+
     public ObservableList<PowerPlant> getCurrentPowerPlants() {
         //creates a list of power plants the player can sell/upgrade at the current location
         ObservableList<PowerPlant> currentPowerPlants = FXCollections.observableArrayList();

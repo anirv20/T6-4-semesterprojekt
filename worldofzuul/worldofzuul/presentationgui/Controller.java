@@ -128,7 +128,6 @@ public class Controller implements Initializable {
 
     }
 
-
     public void nextTurn() {
         int outcome = StartGUI.getCity().nextTurn();
         int soldEnergy = StartGUI.getCity().sellEnergy();

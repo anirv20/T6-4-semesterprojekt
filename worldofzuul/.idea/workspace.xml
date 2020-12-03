@@ -24,14 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="40996821-cfb4-4439-936e-c5174dfbd027" name="Default Changelist" comment="lots of stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/domain/City.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/domain/City.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/presentationgui/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/worldofzuul/worldofzuul/presentationgui/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/domain/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/domain/CoalPowerPlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/CoalPowerPlant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/domain/NuclearReactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/NuclearReactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/domain/Pollution.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/Pollution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/domain/WindFarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/domain/WindFarm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/presentationgui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/presentationgui/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
