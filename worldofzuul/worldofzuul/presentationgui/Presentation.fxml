@@ -22,8 +22,11 @@
    <top>
       <Label text="World of Energy" BorderPane.alignment="CENTER">
          <font>
-            <Font name="Gadugi" size="40.0" />
+            <Font name="Sitka Small" size="50.0" />
          </font>
+         <BorderPane.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </BorderPane.margin>
       </Label>
    </top>
    <left>
@@ -31,18 +34,42 @@
          <children>
             <VBox prefHeight="542.0" prefWidth="190.0">
                <children>
-                  <Label text="Balance">
-                     <font>
-                        <Font name="Gadugi" size="20.0" />
-                     </font>
-                  </Label>
+                  <HBox prefHeight="14.0" prefWidth="180.0">
+                     <children>
+                        <Label text="Balance">
+                           <font>
+                              <Font name="Gadugi" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="helpBal" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#helpBal" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/worldofzuul/images/icon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="92.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
                   <Label id="lblBalance" fx:id="lblBalance" prefHeight="17.0" prefWidth="191.0" text="Label" />
                   <Pane prefHeight="20.0" prefWidth="166.0" />
-                  <Label prefWidth="79.0" text="Pollution">
-                     <font>
-                        <Font name="Gadugi" size="20.0" />
-                     </font>
-                  </Label>
+                  <HBox prefHeight="20.0" prefWidth="180.0">
+                     <children>
+                        <Label prefWidth="79.0" text="Pollution">
+                           <font>
+                              <Font name="Gadugi" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="helpPol" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#helpPol" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="82.0" top="5.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@/worldofzuul/images/icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
                   <ProgressBar id="pBarPollution" fx:id="pBarPollution" prefWidth="200.0" progress="0.0" />
                   <HBox prefHeight="20.0" prefWidth="100.0">
                      <children>
@@ -57,11 +84,23 @@
                      </children>
                   </HBox>
                   <Pane prefHeight="20.0" prefWidth="166.0" />
-                  <Label text="Energy">
-                     <font>
-                        <Font name="Gadugi" size="20.0" />
-                     </font>
-                  </Label>
+                  <HBox prefHeight="4.0" prefWidth="180.0">
+                     <children>
+                        <Label text="Energy">
+                           <font>
+                              <Font name="Gadugi" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="helpEne" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#helpEne" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="100.0" top="5.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@/worldofzuul/images/icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
                   <ProgressBar id="pBarEnergy" fx:id="pBarEnergy" prefWidth="200.0" progress="0.0" />
                   <HBox prefHeight="20.0" prefWidth="100.0">
                      <children>
