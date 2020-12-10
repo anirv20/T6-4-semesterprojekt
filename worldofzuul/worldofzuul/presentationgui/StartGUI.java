@@ -20,6 +20,11 @@ public class StartGUI extends Application {
         stage.show();
         stage.setResizable(false);
         stage.requestFocus();
+        Window.popUp("Welcome!", "Welcome to World of Energy! You are the mayor of this lovely city and you have to make sure you produce enough" +
+                "electricity for your citizens! Due to global warming, we have to try other power plants than the coal power plant we currently have." +
+                "If we get enough money, we can invest in wind farms and nuclear reactors! You make money each turn. 100,000 coins from taxes and " +
+                "some money from selling energy. Press the \"?\"-icon next to balance to get more information. The energy demand will increase each turn" +
+                "so make sure you are producing plenty of energy. If you make it to 30 turns you win! If you need help, try pressing the \"?\"-icons. Have fun!");
     }
 
     public static void main(String[] args) {

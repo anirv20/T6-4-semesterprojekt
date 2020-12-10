@@ -13,6 +13,7 @@ public class City
     private Room cityHall, outside, nuclearReactor, coalPowerPlant, windFarm;
     private int currentTurn = 1;
     private final int MAXTURN = 30;
+    private boolean includeWind = true;
 
     public City()
     {
@@ -22,8 +23,8 @@ public class City
         pollution = new Pollution();
         createRooms();
 
-        sumTotalProduction();
         sumTurnPollution();
+        sumTotalProduction();
         energy.checkDifference();
     }
 
@@ -33,12 +34,12 @@ public class City
         outside = new Room("outside the main entrance of the City Hall", "Outside");
         cityHall = new Room("in the City Hall", "City Hall");
         nuclearReactor = new Room("at the nuclear power plant. A nuclear reactor costs 3,100,000 coins " +
-                "and produces 1000 MW. The pollution is 12 tonCO2e/turn", "Nuclear Reactor");
+                "and produces 1000 MW. The pollution is 12 kgCO2e/turn", "Nuclear Reactor");
         coalPowerPlant = new Room("at the coal power plant. A coal power plant costs 450,000 coins " +
-                "and produces 600 MW. The pollution is 492 tonCO2e/turn", "Coal Power Plant");
+                "and produces 600 MW. The pollution is 492 kgCO2e/turn", "Coal Power Plant");
         windFarm = new Room("at the wind farms. A wind farm consists of 100 wind turbines, costs 1,240,000 coins " +
-                "and produces 400 MW. The pollution is 4 tonCO2e/turn", "Wind Farm");
-        
+                "and produces 400 MW. The pollution is 4 kgCO2e/turn", "Wind Farm");
+
         cityHall.setExit("outside", outside);
         cityHall.setInfo("Buy power plants to produce enough energy for the city. " +
                 "You earn money buy producing more power than your city needs." +
@@ -52,8 +53,8 @@ public class City
         updateOutsideInfo();
 
         coalPowerPlant.setExit("outside", outside);
-        coalPowerPlant.setInfo("This is a coal power plant. A coal power plant costs 450000 coins " +
-                "and produces 600 MW. The pollution is 492 tonCO2e/turn \n" +
+        coalPowerPlant.setInfo("This is a coal power plant. A coal power plant costs " + CoalPowerPlant.getPrice() + " coins " +
+                "and produces 600 MW. The pollution is 492 kgCO2e/turn \n" +
                 "Coal power plants are huge structures usually build in industrial districts. " +
                 "They use coal to produce heat, the heat is used to boil water and the steam from " +
                 "the water is used to drive generators. The environmental impact from burning coal " +
@@ -62,8 +63,8 @@ public class City
                 "lots of it very cheaply");
 
         nuclearReactor.setExit("outside", outside);
-        nuclearReactor.setInfo("This is a nuclear reactor. A nuclear reactor costs 3,100,000 coins " +
-                "and produces 6,100 MW. The pollution is 12 tonCO2e/turn \n" +
+        nuclearReactor.setInfo("This is a nuclear reactor. A nuclear reactor costs " + NuclearReactor.getPrice() + " coins " +
+                "and produces 6,100 MW. The pollution is 12 kgCO2e/turn \n" +
                 "Nuclear power plants split tiny atoms to produce heat. This creates some amount of radiation, " +
                 "that for the most part can be contained within the reactor itself. The heat is used to boil water " +
                 "and the steam from the water is used to drive generators. They are usually perceived as dangerous, " +
@@ -72,8 +73,8 @@ public class City
                 "but it is estimated that we have a couple hundred years of supply.");
 
         windFarm.setExit("outside", outside);
-        windFarm.setInfo("This is a wind farm consisting of 100 wind turbines. A wind farm costs 1,240,000 coins " +
-                "and produces 400 MW. The pollution is 4 tonCO2e/turn \n" +
+        windFarm.setInfo("This is a wind farm consisting of 100 wind turbines. A wind farm costs " + WindFarm.getPrice() +
+                " coins and produces 400 MW. The pollution is 4 kgCO2e/turn \n" +
                 "Wind farms consist of 100 wind turbines placed on either land or in the ocean. " +
                 "When the wind hits the giant blades, the wind turbine drives a generator that creates " +
                 "electricity. On the ocean these wind turbines can be several hundred meters tall. Because " +
@@ -90,8 +91,8 @@ public class City
                 PowerPlant powerPlant = new WindFarm();
                 powerPlants.add(powerPlant);
                 economy.removeMoney(WindFarm.getPrice());
-                sumTotalProduction();
                 sumTurnPollution();
+                sumTotalProduction();
                 return 0;
             } else {
                 return 1;
@@ -101,8 +102,8 @@ public class City
                 PowerPlant powerPlant = new NuclearReactor();
                 powerPlants.add(powerPlant);
                 economy.removeMoney(NuclearReactor.getPrice());
-                sumTotalProduction();
                 sumTurnPollution();
+                sumTotalProduction();
                 return 2;
             } else {
                 return 3;
@@ -112,9 +113,9 @@ public class City
                 PowerPlant powerPlant = new CoalPowerPlant();
                 powerPlants.add(powerPlant);
                 economy.removeMoney(CoalPowerPlant.getPrice());
-                sumTotalProduction();
                 sumTurnPollution();
-                
+                sumTotalProduction();
+
                 return 4;
             } else {
                 return 5;
@@ -130,8 +131,8 @@ public class City
         try {
             powerPlants.remove(sellList.get(sellIndex));
             economy.addMoney(sellList.get(sellIndex).getValue());
-            sumTotalProduction();
             sumTurnPollution();
+            sumTotalProduction();
             return true;
         } catch(IndexOutOfBoundsException e) {
             return false;
@@ -141,13 +142,17 @@ public class City
     public int upgradePowerPlant(int upgradeIndex) {
         //Makes an arraylist of upgradeable power plants in the room and lets you choose which power plant to upgrade.
         ObservableList<PowerPlant> upgradeList = getCurrentPowerPlants();
+        PowerPlant p = upgradeList.get(upgradeIndex);
         try {
-            if (economy.getBalance() >= upgradeList.get(upgradeIndex).getUpgradePrice()) {
-                boolean success = upgradeList.get(upgradeIndex).upgrade();
+            if (economy.getBalance() >= p.getUpgradePrice()) {
+                boolean success = p.upgrade();
                 if (success) {
-                    economy.removeMoney(upgradeList.get(upgradeIndex).getUpgradePrice());
-                    sumTotalProduction();
+                    long price = p.getUpgradePrice();
+                    economy.removeMoney(price);
                     sumTurnPollution();
+                    sumTotalProduction();
+                    p.setValue(p.getValue() + price);
+                    p.setUpgradePrice((long)(p.getValue()*0.8));
                     return 0;
                     //success
                 } else {
@@ -168,7 +173,11 @@ public class City
         // Calculates the total production of all currently owned power plants
         energy.setTotalProduction(0);
         for (PowerPlant p : powerPlants) {
-            energy.setTotalProduction(energy.getTotalProduction() + p.getEnergyProduction());
+            if (!(p instanceof WindFarm)){
+                energy.setTotalProduction(energy.getTotalProduction() + p.getEnergyProduction());
+            } else if (includeWind) {
+                energy.setTotalProduction(energy.getTotalProduction() + p.getEnergyProduction());
+            }
         }
     }
 
@@ -180,7 +189,9 @@ public class City
         }
     }
 
-    public int sellEnergy() {
+    public int updateEconomy() {
+        energy.checkDifference();
+        economy.addMoney(100000); //Adds money from taxes
         if (energy.getDifference() < 0) {
             economy.removeMoney(Math.abs((long)energy.getDifference()*1000), true);
             return 0;
@@ -198,28 +209,28 @@ public class City
             currentTurn++;
             sumTotalProduction();
             sumTurnPollution();
-            energy.checkDifference();
-            pollution.setTotalPollution(pollution.getTotalPollution() + pollution.getTurnPollution());
 
-            economy.addMoney(100000); //Adds money from taxes
+            pollution.setTotalPollution(pollution.getTotalPollution() + pollution.getTurnPollution());
 
             energy.setDemand(energy.getDemand()*1.1);
 
+            includeWind = true;
+            sumTotalProduction();
             if (pollution.getTotalPollution() >= pollution.LIMIT) {
                  return 1;
-                //System.out.println("You polluted too much");
+                 //too much pollution
             }
             if (economy.getBalance() < 0) {
-                /*finished = true;
-                System.out.println("You are bankrupt.");
-                */
                 return 2;
+                //bankrupt
             }
         }
         else {
             return 3;
+            //you won
         }
         return 0;
+        //continue
     }
 
     public int eventManager() {
@@ -277,12 +288,14 @@ public class City
                             windEnergy += p.getEnergyProduction();
                         }
                     }
-                    if (windFarmsAmount != 0) {
+                    if (windFarmsAmount != 0 && includeWind) {
                         energy.setTotalProduction(energy.getTotalProduction()-windEnergy);
+                        includeWind = false;
                         return 20;
                         //"There is not enough wind today, for your wind turbines to produce any energy."
                     } else {
                         WindFarm.setPrice(WindFarm.getPrice()-250000);
+                        createRooms();
                         //"There has been advancements in the wind technology. Wind farms are now permanently 250,000 coins cheaper."
                         return 21;
                     }
@@ -294,8 +307,9 @@ public class City
                 } else if (whichEvent == 4) {
                     PowerPlant.setBonus(PowerPlant.getBonus()+0.1);
                     for (PowerPlant p : powerPlants) {
-                        p.setEnergyProduction(p.getEnergyProduction()*1.1);
+                        p.setEnergyProduction(p.getEnergyProduction()*PowerPlant.getBonus());
                     }
+                    sumTotalProduction();
                     //"Your city's electricity infrastructure has been upgraded.
                     //All power plants are now 10% more energy efficient."
                     return 40;
@@ -333,15 +347,17 @@ public class City
                 }
             }
         } else if (currentRoom.equals(cityHall)) {
-            currentPowerPlants = powerPlants;
+            for (PowerPlant p : powerPlants) {
+                currentPowerPlants.add(p);
+            }
         }
         return currentPowerPlants;
     }
 
     public void updateOutsideInfo() {
-        if (pollution.getTurnPollution() < 492000) {
+        if (pollution.getTurnPollution() < 492) {
             outside.setInfo("Ah - fresh air!");
-        } else if (pollution.getTurnPollution() < 492000 * 2) {
+        } else if (pollution.getTurnPollution() < 492 * 2) {
             outside.setInfo("The air isn't as fresh as it used to be around here.");
         } else {
             outside.setInfo("I'm having trouble breathing!");

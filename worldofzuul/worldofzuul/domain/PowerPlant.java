@@ -65,11 +65,11 @@ public abstract class PowerPlant {
         this.level = level;
     }
 
+    public abstract boolean upgrade();
+
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public abstract boolean upgrade();
 
     @Override
     public String toString() {
