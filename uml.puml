@@ -1,0 +1,174 @@
+@startuml
+class worldofzuul.domain.Energy {
+- double demand
+- double totalProduction
+- double difference
++ double getDemand()
++ void setDemand(double)
++ double getTotalProduction()
++ void setTotalProduction(double)
++ double getDifference()
++ void setDifference(double)
++ void checkDifference()
+}
+class worldofzuul.presentationgui.Window {
++ {static} void popUp(String,String)
+}
+class worldofzuul.domain.Pollution {
++ double LIMIT
+- double totalPollution
+- double turnPollution
++ double getLimit()
++ double getTotalPollution()
++ double getPollutionPercent()
++ void setTotalPollution(double)
++ double getTurnPollution()
++ void setTurnPollution(double)
+}
+class worldofzuul.domain.NuclearReactor {
+- {static} long price
++ {static} long getPrice()
++ boolean upgrade()
++ String toString()
+}
+abstract class worldofzuul.domain.PowerPlant {
+- double pollution
+- long value
+- long upgradePrice
+- int level
++ {static} int MAXLEVEL
++ {static} double bonus
+- String description
++ {static} double getBonus()
++ {static} void setBonus(double)
++ long getUpgradePrice()
++ void setUpgradePrice(long)
++ long getValue()
++ void setValue(long)
++ double getPollution()
++ void setPollution(double)
++ double getEnergyProduction()
++ void setEnergyProduction(double)
++ int getLevel()
++ void setLevel(int)
++ {abstract}boolean upgrade()
++ void setDescription(String)
++ String toString()
+}
+class worldofzuul.domain.City {
+- Room currentRoom
+- Economy economy
+- Energy energy
+- Pollution pollution
+- ObservableList<PowerPlant> powerPlants
+- Room cityHall
+- int currentTurn
+- int MAXTURN
+- boolean includeWind
+- void createRooms()
++ int buyPowerPlant()
++ boolean sellPowerPlant(int)
++ int upgradePowerPlant(int)
++ void sumTotalProduction()
++ void sumTurnPollution()
++ int updateEconomy()
++ int nextTurn()
++ int eventManager()
++ ObservableList<PowerPlant> getCurrentPowerPlants()
++ void updateOutsideInfo()
++ Room getCurrentRoom()
++ Economy getEconomy()
++ Energy getEnergy()
++ Pollution getPollution()
++ ObservableList<PowerPlant> getPowerPlants()
++ int getCurrentTurn()
++ int getMAXTURN()
++ void setCurrentRoom(Room)
++ Room getCityHall()
++ Room getOutside()
++ Room getNuclearReactor()
++ Room getCoalPowerPlant()
++ Room getWindFarm()
+}
+class worldofzuul.domain.Economy {
+- long balance
++ void addMoney(long)
++ boolean removeMoney(long)
++ boolean removeMoney(long,boolean)
++ long getBalance()
+}
+class worldofzuul.domain.CoalPowerPlant {
+- {static} long price
++ {static} long getPrice()
++ boolean upgrade()
++ String toString()
+}
+class worldofzuul.presentationgui.Controller {
+- Button btnBuy
+- Button btnSell
+- Button btnUpgrade
+- Button btnNext
+- Label lblCurrentLocation
+- Label lblDemand
+- Label lblTotalPollution
+- Label lblTurnPollution
+- Label lblTurnEnergy
+- Label lblBalance
+- Circle player
+- TextArea txtInfo
+- ListView<PowerPlant> listViewPowerPlants
+- ProgressIndicator pIndTurns
+- ProgressBar pBarEnergy
+- ProgressBar pBarPollution
+- ImageView helpBal
+- ImageView helpPol
+- ImageView helpEne
+- boolean includeWind
+- boolean warningMessage
+- City city
++ void initialize(URL,ResourceBundle)
++ void movePlayer(KeyEvent)
++ void updateStats()
++ void buyPowerPlant()
++ void sellPowerPlant()
++ void upgradePowerPlant()
++ void nextTurn()
++ String numFormat(long)
++ void helpBal()
++ void helpPol()
++ void helpEne()
+}
+class worldofzuul.domain.WindFarm {
+- {static} long price
++ {static} long getPrice()
++ {static} void setPrice(long)
++ boolean upgrade()
++ String toString()
+}
+class worldofzuul.presentationgui.StartGUI {
+- {static} City city
++ void start(Stage)
++ {static} void main(String[])
++ {static} City getCity()
++ {static} void roomChecker(Circle)
+}
+class worldofzuul.domain.Room {
+- String description
+- String info
+- String name
+- HashMap<String,Room> exits
++ void setExit(String,Room)
+- String getExitString()
++ Room getExit(String)
++ String getInfo()
++ void setInfo(String)
++ String toString()
+}
+
+
+worldofzuul.domain.PowerPlant <|-- worldofzuul.domain.NuclearReactor
+worldofzuul.domain.PowerPlant <|-- worldofzuul.domain.CoalPowerPlant
+javafx.fxml.Initializable <|.. worldofzuul.presentationgui.Controller
+worldofzuul.domain.PowerPlant <|-- worldofzuul.domain.WindFarm
+javafx.application.Application <|-- worldofzuul.presentationgui.StartGUI
+@enduml

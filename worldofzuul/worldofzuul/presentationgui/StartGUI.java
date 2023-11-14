@@ -13,13 +13,14 @@ public class StartGUI extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Presentation.FXML"));
+        Parent root = FXMLLoader.load(getClass().getResource("Presentation.fxml"));// filen
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);
         stage.requestFocus();
+        // et vindue i starten
         Window.popUp("Welcome!", "Welcome to World of Energy! You are the mayor of this lovely city and you have to make sure you produce enough" +
                 "electricity for your citizens! Due to global warming, we have to try other power plants than the coal power plant we currently have." +
                 "If we get enough money, we can invest in wind farms and nuclear reactors! You make money each turn. 100,000 coins from taxes and " +
@@ -36,6 +37,9 @@ public class StartGUI extends Application {
     }
 
     public static void roomChecker(Circle player){
+        //som hele tiden holder spilleren opdateret på hvor de og dermed kuglen befinder sig på mappet.
+        // Metoden anvender x og y koordinaterne, som repræsenterer mappet’s bredde og længde, for at finde
+        // kuglens lokation.
         if ((player.getCenterX() > -66.6) && (player.getCenterX() < 66.6)) {
             if ((player.getCenterY() >= 0) && (player.getCenterY() < 133.3)) {
                 city.setCurrentRoom(city.getCityHall());

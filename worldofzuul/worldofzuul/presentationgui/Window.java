@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class Window {
 
-    public static void popUp(String title, String message){
+    public static void popUp(String title, String message){ // den bruger vi til laver vinduer
         Stage window = new Stage();
 
         window.initModality(Modality.APPLICATION_MODAL); //Blocks other windows until you close this one
@@ -25,7 +25,7 @@ public class Window {
         layout.getChildren().add(text);
         layout.setAlignment(Pos.CENTER);
 
-        Scene scene = new Scene(layout,250, 150);
+        Scene scene = new Scene(layout,250, 150);// størelsen 
 
         window.setScene(scene);
         window.showAndWait();

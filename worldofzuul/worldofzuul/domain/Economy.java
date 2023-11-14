@@ -1,17 +1,17 @@
 package worldofzuul.domain;
 
 public class Economy {
-    private long balance;
+    private long balance; // start balance
 
     public Economy(long amount) {
         this.balance = amount;
     }
 
-    public void addMoney(long amount) {
+    public void addMoney(long amount) {// vi får penge når vi sælger energi eller stationer
         this.balance += amount;
     }
 
-    public boolean removeMoney(long amount) {
+    public boolean removeMoney(long amount) { // når vi køber eller upgrade
         if (this.balance-amount >= 0) {
             this.balance -= amount;
             return true;

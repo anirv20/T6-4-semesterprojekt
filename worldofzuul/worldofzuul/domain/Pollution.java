@@ -1,9 +1,9 @@
 package worldofzuul.domain;
 
 public class Pollution {
-    public final double LIMIT = 5000;
-    private double totalPollution;
-    private double turnPollution;
+    public final double LIMIT = 5000; // max pollution
+    private double totalPollution; // total
+    private double turnPollution;// pollution per turn
     
     public double getLimit() {
         return LIMIT;
@@ -13,7 +13,7 @@ public class Pollution {
         return totalPollution;
     }
 
-    public double getPollutionPercent() {
+    public double getPollutionPercent() { // pullotion i procent
         return totalPollution/LIMIT*100;
     }
 

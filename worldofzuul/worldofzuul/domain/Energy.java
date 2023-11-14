@@ -1,9 +1,9 @@
 package worldofzuul.domain;
 
 public class Energy {
-    private double demand;
-    private double totalProduction;
-    private double difference;
+    private double demand;  //minimum mængde af energi demand for at sælge energi for hver station
+    private double totalProduction;// total energi
+    private double difference;// forskellen mellem totalproduction og demand
 
     public Energy() {
         this.demand = 600;
@@ -34,7 +34,7 @@ public class Energy {
         this.difference = difference;
     }
 
-    public void checkDifference() {
+    public void checkDifference() {  // // forskellen mellem totalproduction og demand
         this.difference = getTotalProduction() - getDemand();
     }
 }

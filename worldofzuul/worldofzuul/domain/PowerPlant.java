@@ -65,7 +65,7 @@ public abstract class PowerPlant {
         this.level = level;
     }
 
-    public abstract boolean upgrade();
+    public abstract boolean upgrade(); // har ikke body abstrakt
 
     public void setDescription(String description) {
         this.description = description;
@@ -76,3 +76,6 @@ public abstract class PowerPlant {
         return "PowerPlant";
     }
 }
+
+
+

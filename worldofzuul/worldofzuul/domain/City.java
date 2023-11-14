@@ -5,20 +5,20 @@ import javafx.collections.ObservableList;
 
 public class City
 {
-    private Room currentRoom;
+    private Room currentRoom;//  hvor er vi hennne i lokationer
     private Economy economy;
     private Energy energy;
     private Pollution pollution;
-    private ObservableList<PowerPlant> powerPlants = FXCollections.observableArrayList();
-    private Room cityHall, outside, nuclearReactor, coalPowerPlant, windFarm;
-    private int currentTurn = 1;
-    private final int MAXTURN = 30;
+    private ObservableList<PowerPlant> powerPlants = FXCollections.observableArrayList();// ??
+    private Room cityHall, outside, nuclearReactor, coalPowerPlant, windFarm; // lokationer
+    private int currentTurn = 1; // hvilken turen
+    private final int MAXTURN = 30;// max turen
     private boolean includeWind = true;
 
     public City()
     {
-        powerPlants.add(new CoalPowerPlant());
-        economy = new Economy(1000000);
+        powerPlants.add(new CoalPowerPlant());// i starten
+        economy = new Economy(1000000); // start balance
         energy = new Energy();
         pollution = new Pollution();
         createRooms();
@@ -29,7 +29,7 @@ public class City
     }
 
 
-    private void createRooms()
+    private void createRooms() // den indholder om navn af lokation og deres beskrivelse
     {
         outside = new Room("outside the main entrance of the City Hall", "Outside");
         cityHall = new Room("in the City Hall", "City Hall");
@@ -40,8 +40,8 @@ public class City
         windFarm = new Room("at the wind farms. A wind farm consists of 100 wind turbines, costs 1,240,000 coins " +
                 "and produces 400 MW. The pollution is 4 kgCO2e/turn", "Wind Farm");
 
-        cityHall.setExit("outside", outside);
-        cityHall.setInfo("Buy power plants to produce enough energy for the city. " +
+        cityHall.setExit("outside", outside);// indholder navn af diretion
+        cityHall.setInfo("Buy power plants to produce enough energy for the city. " +// oplysninger om denne direction
                 "You earn money buy producing more power than your city needs." +
                 "You also make 100,000 coins after each turn in taxes." +
                 "Watch out for pollution. It is necessary to invest in green energy.");
@@ -81,7 +81,7 @@ public class City
                 "the wind is not consistent, the electricity output varies. Their environmental impact is minimal, " +
                 "only emitting CO2 during production.");
 
-        currentRoom = cityHall;
+        currentRoom = cityHall;// stedet hvor spillet starter
     }
 
     public int buyPowerPlant() {
@@ -94,7 +94,7 @@ public class City
                 sumTurnPollution();
                 sumTotalProduction();
                 return 0;
-            } else {
+            } else {// hvis penge er ikke nok
                 return 1;
             }
         } else if (currentRoom.equals(nuclearReactor)) {
@@ -105,7 +105,7 @@ public class City
                 sumTurnPollution();
                 sumTotalProduction();
                 return 2;
-            } else {
+            } else {// hvis penge er ikke nok
                 return 3;
             }
         } else if (currentRoom.equals(coalPowerPlant)) {
@@ -117,7 +117,7 @@ public class City
                 sumTotalProduction();
 
                 return 4;
-            } else {
+            } else {// hvis penge er ikke nok
                 return 5;
             }
         } else {
@@ -129,8 +129,8 @@ public class City
         //Makes an arraylist of sellable power plants in the room and lets you choose which power plant to sell.
         ObservableList<PowerPlant> sellList = getCurrentPowerPlants();
         try {
-            powerPlants.remove(sellList.get(sellIndex));
-            economy.addMoney(sellList.get(sellIndex).getValue());
+            powerPlants.remove(sellList.get(sellIndex));// man vælger selv
+            economy.addMoney(sellList.get(sellIndex).getValue());// fordi vi har solt
             sumTurnPollution();
             sumTotalProduction();
             return true;
@@ -152,7 +152,7 @@ public class City
                     sumTurnPollution();
                     sumTotalProduction();
                     p.setValue(p.getValue() + price);
-                    p.setUpgradePrice((long)(p.getValue()*0.8));
+                    p.setUpgradePrice((long)(p.getValue()*0.8));// kost til upgrade
                     return 0;
                     //success
                 } else {
@@ -189,7 +189,7 @@ public class City
         }
     }
 
-    public int updateEconomy() {
+    public int updateEconomy() { //opdate penge nå vi køber eller sælger
         energy.checkDifference();
         economy.addMoney(100000); //Adds money from taxes
         if (energy.getDifference() < 0) {
@@ -212,7 +212,7 @@ public class City
 
             pollution.setTotalPollution(pollution.getTotalPollution() + pollution.getTurnPollution());
 
-            energy.setDemand(energy.getDemand()*1.1);
+            energy.setDemand(energy.getDemand()*1.1);// stiger
 
             includeWind = true;
             sumTotalProduction();
@@ -234,9 +234,13 @@ public class City
     }
 
     public int eventManager() {
+        //nice to have” krav var, at der kunne opstå forskellige begivenheder i løbet af spillet,
+        // som spilleren ikke har kontrol over
         if (currentTurn > 4) {
+            //Den bliver så kaldt hver gang man går til “next turn”.  Den tjekker først om den nuværende
+            // turn er mere end 4, så der ikke kommer nogen begivenheder i de første 4 turns.
             int eventHappens = (int)(Math.random() * 10);
-            if (eventHappens >= 7) {
+            if (eventHappens >= 7) { //kan der ske en begivenhed.
                 int whichEvent = (int)(Math.random()*10);
 
                 if (whichEvent == 0){
@@ -319,6 +323,8 @@ public class City
             } else {
                 return 100;
             }
+
+            
         }
         return 100;
         //No event
@@ -354,7 +360,7 @@ public class City
         return currentPowerPlants;
     }
 
-    public void updateOutsideInfo() {
+    public void updateOutsideInfo() { // information om getturn pullotion ifh til outside og condition
         if (pollution.getTurnPollution() < 492) {
             outside.setInfo("Ah - fresh air!");
         } else if (pollution.getTurnPollution() < 492 * 2) {

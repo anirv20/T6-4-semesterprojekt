@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#movePlayer" prefHeight="600.0" prefWidth="800.0" scaleShape="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzuul.presentationgui.Controller">
+   <top>
+      <Label text="World of Energy" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Sitka Small" size="50.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <left>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="542.0" prefWidth="190.0">
+               <children>
+                  <HBox prefHeight="14.0" prefWidth="180.0">
+                     <children>
+                        <Label text="Balance">
+                           <font>
+                              <Font name="Gadugi" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="helpBal" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#helpBal" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/worldofzuul/images/icon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="92.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Label id="lblBalance" fx:id="lblBalance" prefHeight="17.0" prefWidth="191.0" text="Label" />
+                  <Pane prefHeight="20.0" prefWidth="166.0" />
+                  <HBox prefHeight="20.0" prefWidth="180.0">
+                     <children>
+                        <Label prefWidth="79.0" text="Pollution">
+                           <font>
+                              <Font name="Gadugi" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="helpPol" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#helpPol" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="82.0" top="5.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@/worldofzuul/images/icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <ProgressBar id="pBarPollution" fx:id="pBarPollution" prefWidth="200.0" progress="0.0" />
+                  <HBox prefHeight="20.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="70.0" text="Per turn:" />
+                        <Label id="lblTurnPollution" fx:id="lblTurnPollution" prefHeight="17.0" prefWidth="110.0" text="Label" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="20.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="70.0" text="Total:" />
+                        <Label id="lblTotalPollution" fx:id="lblTotalPollution" prefHeight="17.0" prefWidth="110.0" text="Label" />
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="20.0" prefWidth="166.0" />
+                  <HBox prefHeight="4.0" prefWidth="180.0">
+                     <children>
+                        <Label text="Energy">
+                           <font>
+                              <Font name="Gadugi" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="helpEne" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#helpEne" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="100.0" top="5.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@/worldofzuul/images/icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <ProgressBar id="pBarEnergy" fx:id="pBarEnergy" prefWidth="200.0" progress="0.0" />
+                  <HBox prefHeight="20.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="70.0" text="Per turn:" />
+                        <Label id="lblTurnEnergy" fx:id="lblTurnEnergy" prefHeight="17.0" prefWidth="112.0" text="Label" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="20.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="70.0" text="Demand:" />
+                        <Label id="lblDemand" fx:id="lblDemand" prefHeight="17.0" prefWidth="111.0" text="Label" />
+                     </children>
+                  </HBox>
+                  <ProgressIndicator id="pIndTurns" fx:id="pIndTurns" minHeight="150.0" minWidth="150.0" prefHeight="181.0" prefWidth="177.0" progress="0.0" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="403.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@/worldofzuul/images/map_text.png" />
+               </image>
+            </ImageView>
+            <Circle id="player" fx:id="player" fill="RED" layoutX="200.0" layoutY="5.0" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" />
+            <Button id="btnNext" fx:id="btnNext" layoutX="149.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#nextTurn" prefHeight="48.0" prefWidth="103.0" style="-fx-border-color: Black;" text="NEXT TURN" />
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="180.0">
+               <children>
+                  <AnchorPane prefHeight="51.0" prefWidth="180.0">
+                     <children>
+                        <Label layoutY="6.0" prefHeight="17.0" prefWidth="119.0" text="Current location:" />
+                        <Label id="lblCurrentLocation" fx:id="lblCurrentLocation" layoutX="14.0" layoutY="18.0" text="Label">
+                           <font>
+                              <Font name="Gadugi" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <TitledPane animated="false" prefHeight="208.0" prefWidth="180.0" text="Info">
+                     <content>
+                        <TextArea id="txtInfo" fx:id="txtInfo" editable="false" focusTraversable="false" prefHeight="197.0" prefWidth="178.0" style="-fx-wrap-text: true;" text="Coal power plants are huge structures usually build in industrial districts. They use coal to produce heat, the heat is used to boil water and the steam from the water is used to drive generators. The environmental impact from burning coal is seen in the form of acid rain, smog and of course the devestating amounts of CO2 emissions. They are however consistent in their production of electricity and generate lots of it very cheaply." />
+                     </content>
+                  </TitledPane>
+                  <TitledPane prefHeight="195.0" prefWidth="180.0" text="PowerPlants">
+                     <content>
+                        <ListView id="listViewPowerPlants" fx:id="listViewPowerPlants" prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </TitledPane>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Button id="btnBuy" fx:id="btnBuy" mnemonicParsing="false" onMouseClicked="#buyPowerPlant" style="-fx-background-color: #7CFC00; -fx-border-color: black;" text="BUY">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button id="btnSell" fx:id="btnSell" mnemonicParsing="false" onMouseClicked="#sellPowerPlant" style="-fx-background-color: #DC143C; -fx-border-color: black;" text="SELL" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button id="btnUpgrade" fx:id="btnUpgrade" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#upgradePowerPlant" style="-fx-border-color: black;" text="UPGRADE">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="10.0" />
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+   </right>
+</BorderPane>

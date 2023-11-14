@@ -44,6 +44,8 @@ public class Controller implements Initializable {
 
     @FXML
     public void movePlayer(KeyEvent event) {
+        //ændrer på cirklens koordinater så længe man ikke bevæger sig ud af mappets grænser.
+        //Der tjekkes desuden om player objektet af typen Circle har bevæget sig udenfor mappet.
         switch (event.getCode()) {
             case S:
                 if (player.getCenterY() < 390) {
@@ -83,7 +85,8 @@ public class Controller implements Initializable {
         txtInfo.setText(city.getCurrentRoom().getInfo());
     }
 
-    public void buyPowerPlant() {
+    public void buyPowerPlant() { // popper vinduet op og fortæller hvor mange coins man købt  det for
+        // den indholder title og messagr
         if (city.getCurrentRoom().equals(city.getCityHall()) || city.getCurrentRoom().equals(city.getOutside())) {
             Window.popUp("buy","You are not in the right location to buy a power plant.");
         } else {
@@ -105,6 +108,8 @@ public class Controller implements Initializable {
         }
     }
     public void sellPowerPlant() {
+        // popper vinduet op og fortæller hvor mange coins man solt  for power plant
+        // den indholder title og messagr
         try {
             long price = city.getCurrentPowerPlants().get(listViewPowerPlants.getSelectionModel().getSelectedIndex()).getValue();
             city.sellPowerPlant(listViewPowerPlants.getSelectionModel().getSelectedIndex());
@@ -117,6 +122,8 @@ public class Controller implements Initializable {
     }
 
     public void upgradePowerPlant() {
+        // popper vinduet op og fortæller hvor mange coins har brugt til upgrade  det for
+        // den indholder title og messagr
         try {
             long price = city.getCurrentPowerPlants().get(listViewPowerPlants.getSelectionModel().getSelectedIndex()).getUpgradePrice();
             int result = city.upgradePowerPlant(listViewPowerPlants.getSelectionModel().getSelectedIndex());
@@ -135,7 +142,7 @@ public class Controller implements Initializable {
 
     }
 
-    public void nextTurn() {
+    public void nextTurn() {// soldEnergy
         int soldEnergy = city.updateEconomy();
         int outcome = city.nextTurn();
 
